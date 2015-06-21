@@ -1,0 +1,14 @@
+﻿Build started 16-May-15 12:57:38 AM.
+     1>Project "C:\Users\Robert\Documents\Visual Studio 2013\Projects\GameDraw\Pattern\Pattern.vcxproj" on node 2 (Build target(s)).
+     1>PrepareForBuild:
+         Creating directory "Debug\Pattern.tlog\".
+       InitializeBuildStatus:
+         Creating "Debug\Pattern.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       FinalizeBuildStatus:
+         Deleting file "Debug\Pattern.tlog\unsuccessfulbuild".
+         Touching "Debug\Pattern.tlog\Pattern.lastbuildstate".
+     1>Done Building Project "C:\Users\Robert\Documents\Visual Studio 2013\Projects\GameDraw\Pattern\Pattern.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.03

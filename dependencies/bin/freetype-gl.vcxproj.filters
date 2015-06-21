@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\freetype-gl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vec234.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\opengl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\markup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{46B8E058-3F1C-4EF3-908A-70FA85834727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C6623E28-F112-4BA2-9B6A-2880B129E90C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

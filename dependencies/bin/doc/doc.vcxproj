@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{E30FB85B-94D4-4741-B35F-97973E0485F4}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>doc</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glut;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glut;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glut;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glut;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/doc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl -BC:/Users/Robert/Desktop/GameDraw/dependencies/bin --check-stamp-file C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/doc/CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\CMakeLists.txt;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindDoxygen.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeParseArguments.cmake;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\Doxyfile.in;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/doc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl -BC:/Users/Robert/Desktop/GameDraw/dependencies/bin --check-stamp-file C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/doc/CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\CMakeLists.txt;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindDoxygen.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeParseArguments.cmake;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\Doxyfile.in;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/doc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl -BC:/Users/Robert/Desktop/GameDraw/dependencies/bin --check-stamp-file C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/doc/CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\CMakeLists.txt;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindDoxygen.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeParseArguments.cmake;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\Doxyfile.in;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/doc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl -BC:/Users/Robert/Desktop/GameDraw/dependencies/bin --check-stamp-file C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/doc/CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\CMakeLists.txt;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindDoxygen.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeParseArguments.cmake;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\Doxyfile.in;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Robert\Desktop\GameDraw\dependencies\bin\CMakeFiles\b8cf3397ba375940a8e6e8517cdbd5e7\index.html.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating html/index.html</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+DOXYGEN_EXECUTABLE-NOTFOUND Doxyfile
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/b8cf3397ba375940a8e6e8517cdbd5e7/index.html.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\Doxyfile.in;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\documentation.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\doxygen.css;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\footer.html;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\header.html;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\layout.xml;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\screenshots.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\style.css;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\text-rendering.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\ansi.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\atb-agg.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\cartoon.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\console.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\cube.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-1.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-2.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-3.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\font.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\gamma.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\glyph.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\line.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\markup.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\outline.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\subpixel.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\texture.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\freetype-gl.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\markup.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\opengl.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vec234.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\makefont.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\ansi.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\atb-agg.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\benchmark.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\cartoon.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\console.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\cube.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field-2.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field-3.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\embedded-font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\gamma.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\glyph.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\lcd.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\markup.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\outline.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\subpixel.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\texture.c;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\html\index.html</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating html/index.html</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+DOXYGEN_EXECUTABLE-NOTFOUND Doxyfile
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/b8cf3397ba375940a8e6e8517cdbd5e7/index.html.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\Doxyfile.in;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\documentation.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\doxygen.css;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\footer.html;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\header.html;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\layout.xml;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\screenshots.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\style.css;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\text-rendering.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\ansi.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\atb-agg.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\cartoon.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\console.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\cube.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-1.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-2.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-3.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\font.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\gamma.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\glyph.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\line.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\markup.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\outline.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\subpixel.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\texture.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\freetype-gl.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\markup.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\opengl.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vec234.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\makefont.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\ansi.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\atb-agg.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\benchmark.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\cartoon.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\console.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\cube.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field-2.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field-3.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\embedded-font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\gamma.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\glyph.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\lcd.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\markup.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\outline.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\subpixel.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\texture.c;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\html\index.html</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating html/index.html</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+DOXYGEN_EXECUTABLE-NOTFOUND Doxyfile
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/b8cf3397ba375940a8e6e8517cdbd5e7/index.html.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\Doxyfile.in;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\documentation.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\doxygen.css;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\footer.html;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\header.html;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\layout.xml;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\screenshots.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\style.css;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\text-rendering.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\ansi.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\atb-agg.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\cartoon.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\console.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\cube.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-1.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-2.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-3.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\font.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\gamma.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\glyph.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\line.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\markup.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\outline.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\subpixel.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\texture.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\freetype-gl.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\markup.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\opengl.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vec234.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\makefont.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\ansi.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\atb-agg.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\benchmark.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\cartoon.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\console.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\cube.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field-2.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field-3.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\embedded-font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\gamma.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\glyph.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\lcd.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\markup.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\outline.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\subpixel.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\texture.c;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\html\index.html</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating html/index.html</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+DOXYGEN_EXECUTABLE-NOTFOUND Doxyfile
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/b8cf3397ba375940a8e6e8517cdbd5e7/index.html.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\Doxyfile.in;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\documentation.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\doxygen.css;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\footer.html;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\header.html;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\layout.xml;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\screenshots.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\style.css;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\text-rendering.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\ansi.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\atb-agg.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\cartoon.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\console.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\cube.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-1.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-2.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\distance-field-3.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\font.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\gamma.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\glyph.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\line.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\markup.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\outline.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\subpixel.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\doc\images\texture.png;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\freetype-gl.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\markup.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\opengl.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vec234.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.h;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\edtaa3func.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\font-manager.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\makefont.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\mat4.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\platform.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\shader.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\text-buffer.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-atlas.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\texture-font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vector.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-attribute.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\vertex-buffer.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\ansi.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\atb-agg.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\benchmark.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\cartoon.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\console.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\cube.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field-2.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field-3.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\distance-field.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\embedded-font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\font.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\gamma.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\glyph.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\lcd.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\markup.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\outline.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\subpixel.c;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\texture.c;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\html\index.html</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Robert\Desktop\GameDraw\dependencies\bin\CMakeFiles\3e304ff1fd3dd45edc96151dc0a21e68\doc.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating API documentation with Doxygen</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/3e304ff1fd3dd45edc96151dc0a21e68/doc.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\html\index.html;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\doc</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating API documentation with Doxygen</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/3e304ff1fd3dd45edc96151dc0a21e68/doc.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\html\index.html;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\doc</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating API documentation with Doxygen</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/3e304ff1fd3dd45edc96151dc0a21e68/doc.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\html\index.html;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\doc</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating API documentation with Doxygen</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/3e304ff1fd3dd45edc96151dc0a21e68/doc.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\html\index.html;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\doc</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Robert\Desktop\GameDraw\dependencies\bin\doc\CMakeFiles\doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/Robert/Desktop/GameDraw/dependencies/bin/ZERO_CHECK.vcxproj">
+      <Project>E33F36EB-BD64-4997-A969-01F78B8FAE82</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

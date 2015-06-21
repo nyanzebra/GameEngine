@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{13f81617-344e-419b-bbdf-c36a6fa9c737}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window">
+      <UniqueIdentifier>{a6772fd1-4a49-4d3f-ab70-86b4cfbdaa95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window\scene">
+      <UniqueIdentifier>{64f75234-c200-4658-b087-18d73693247d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window\scene\material">
+      <UniqueIdentifier>{deba8063-42a7-45b5-9ceb-327a5ae681b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window\scene\material\texture">
+      <UniqueIdentifier>{55621a21-215b-4e8e-950c-dbd0a6214196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window\scene\material\mesh">
+      <UniqueIdentifier>{ce9a9929-8fa8-4de2-b0a8-4721240ed112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window\scene\material\shader">
+      <UniqueIdentifier>{fb5fd783-fd0e-4062-a2e5-4a5ed84c7a96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window\scene\renderer">
+      <UniqueIdentifier>{56d44995-e44f-49b2-ae29-02b918e1b635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window\input">
+      <UniqueIdentifier>{12195f4a-6dcf-425c-8dc5-0218519fd5d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window\camera">
+      <UniqueIdentifier>{e576f442-1722-4152-89dd-059f797cf673}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\window\camera\Camera.h" />
+    <ClInclude Include="src\window\input\Input.h" />
+    <ClInclude Include="src\window\scene\material\shader\Shader.h" />
+    <ClInclude Include="src\window\scene\material\texture\Texture.h" />
+    <ClInclude Include="src\window\scene\material\Material.h" />
+    <ClInclude Include="src\window\scene\renderer\Renderer.h" />
+    <ClInclude Include="src\window\scene\Scene.h" />
+    <ClInclude Include="src\window\Window.h" />
+    <ClInclude Include="src\window\scene\renderer\buffer\buffer.h" />
+    <ClInclude Include="src\window\scene\renderer\2d\renderer2d.h" />
+    <ClInclude Include="src\window\scene\renderer\3d\renderer3d.h" />
+    <ClInclude Include="src\window\scene\renderer\2d\sprite.h" />
+    <ClInclude Include="src\window\scene\renderer\gameobject.h" />
+    <ClInclude Include="src\window\scene\renderer\3d\model.h" />
+    <ClInclude Include="src\errors\glerror.h" />
+    <ClInclude Include="src\window\scene\configurables.h" />
+    <ClInclude Include="src\window\scene\renderer\2d\label.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\window\camera\Camera.cpp" />
+    <ClCompile Include="src\window\input\Input.cpp" />
+    <ClCompile Include="src\window\scene\material\shader\Shader.cpp" />
+    <ClCompile Include="src\window\scene\material\texture\Texture.cpp" />
+    <ClCompile Include="src\window\scene\material\Material.cpp" />
+    <ClCompile Include="src\window\scene\renderer\Renderer.cpp" />
+    <ClCompile Include="src\window\scene\Scene.cpp" />
+    <ClCompile Include="src\window\Window.cpp" />
+    <ClCompile Include="src\window\scene\renderer\buffer\buffer.cpp" />
+    <ClCompile Include="src\window\scene\renderer\2d\renderer2d.cpp" />
+    <ClCompile Include="src\window\scene\renderer\gameobject.cpp" />
+    <ClCompile Include="src\window\scene\renderer\3d\model.cpp" />
+    <ClCompile Include="src\window\scene\renderer\2d\sprite.cpp" />
+    <ClCompile Include="src\window\scene\renderer\2d\label.cpp" />
+    <ClCompile Include="src\window\scene\renderer\3d\renderer3d.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\window\scene\material\shader\shaders\test.vertex" />
+    <None Include="src\window\scene\material\shader\shaders\test.fragment" />
+    <None Include="dependencies\glew\glew32.dll" />
+    <None Include="dependencies\glfw\glfw3.dll" />
+  </ItemGroup>
+</Project>

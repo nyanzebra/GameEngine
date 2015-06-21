@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{B10E6420-D457-474C-AD20-C79C191FED0C}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>generate-embedded-font</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glut;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glew\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\..\windows;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\..\windows\AntTweakBar\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glut;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glew\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\..\windows;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\..\windows\AntTweakBar\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glut;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glew\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\..\windows;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\..\windows\AntTweakBar\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glut;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\glew\include;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\..\windows;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\windows\freetype\freetype;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\..\windows\AntTweakBar\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl -BC:/Users/Robert/Desktop/GameDraw/dependencies/bin --check-stamp-file C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl -BC:/Users/Robert/Desktop/GameDraw/dependencies/bin --check-stamp-file C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl -BC:/Users/Robert/Desktop/GameDraw/dependencies/bin --check-stamp-file C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl -BC:/Users/Robert/Desktop/GameDraw/dependencies/bin --check-stamp-file C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Robert\Desktop\GameDraw\dependencies\bin\CMakeFiles\74579163e73348035b8ecc99074ebbe1\vera-16.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/vera-16.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+..\makefont --font fonts/Vera.ttf --header C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/vera-16.h --size 16 --variable font
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/74579163e73348035b8ecc99074ebbe1/vera-16.h.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\bin\Debug\makefont.exe;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\vera-16.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/vera-16.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+..\makefont --font fonts/Vera.ttf --header C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/vera-16.h --size 16 --variable font
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/74579163e73348035b8ecc99074ebbe1/vera-16.h.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\bin\Release\makefont.exe;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\vera-16.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/vera-16.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+..\makefont --font fonts/Vera.ttf --header C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/vera-16.h --size 16 --variable font
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/74579163e73348035b8ecc99074ebbe1/vera-16.h.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\bin\MinSizeRel\makefont.exe;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\vera-16.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/vera-16.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+..\makefont --font fonts/Vera.ttf --header C:/Users/Robert/Desktop/GameDraw/dependencies/freetypegl/demos/vera-16.h --size 16 --variable font
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/74579163e73348035b8ecc99074ebbe1/vera-16.h.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\bin\RelWithDebInfo\makefont.exe;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\vera-16.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Robert\Desktop\GameDraw\dependencies\bin\CMakeFiles\e67083a45838f660bb2b13fb86c5cbd1\generate-embedded-font.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/e67083a45838f660bb2b13fb86c5cbd1/generate-embedded-font.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\vera-16.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate-embedded-font</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/e67083a45838f660bb2b13fb86c5cbd1/generate-embedded-font.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\vera-16.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate-embedded-font</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/e67083a45838f660bb2b13fb86c5cbd1/generate-embedded-font.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\vera-16.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate-embedded-font</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/Robert/Desktop/GameDraw/dependencies/bin/CMakeFiles/e67083a45838f660bb2b13fb86c5cbd1/generate-embedded-font.rule;C:\Users\Robert\Desktop\GameDraw\dependencies\freetypegl\demos\vera-16.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate-embedded-font</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Robert\Desktop\GameDraw\dependencies\bin\demos\CMakeFiles\generate-embedded-font" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/Robert/Desktop/GameDraw/dependencies/bin/ZERO_CHECK.vcxproj">
+      <Project>E33F36EB-BD64-4997-A969-01F78B8FAE82</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/Robert/Desktop/GameDraw/dependencies/bin/makefont.vcxproj">
+      <Project>96D4102B-A81F-4662-8DDC-51790403726B</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

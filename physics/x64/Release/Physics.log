@@ -1,0 +1,9 @@
+﻿Build started 18-Jun-15 9:28:13 PM.
+     1>Project "C:\Users\Robert\Desktop\GameDraw\physics\Physics.vcxproj" on node 3 (Build target(s)).
+     1>Lib:
+         Physics.vcxproj -> C:\Users\Robert\Desktop\GameDraw\physics\lib/physics.lib
+     1>Done Building Project "C:\Users\Robert\Desktop\GameDraw\physics\Physics.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.09

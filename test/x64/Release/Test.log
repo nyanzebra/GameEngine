@@ -1,0 +1,28 @@
+﻿Build started 21-Jun-15 11:45:51 AM.
+     1>Project "C:\Users\Robert\Desktop\GameDraw\test\Test.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IC:\Users\Robert\Desktop\GameDraw\/pattern/src /IC:\Users\Robert\Desktop\GameDraw\/tools/src /IC:\Users\Robert\Desktop\GameDraw\/physics/src /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt src\tools\math\quaternion_test.cpp
+         quaternion_test.cpp
+     1>src\tools\math\quaternion_test.cpp(113): warning C4305: 'initializing' : truncation from 'double' to 'float'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Robert\Desktop\GameDraw\x64\Release\test.exe" /NOLOGO /LIBPATH:C:\Users\Robert\Desktop\GameDraw\tools\lib tools.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Robert\Desktop\GameDraw\x64\Release\test.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Robert\Desktop\GameDraw\x64\Release\test.lib" /MACHINE:X64 x64\Release\main.obj
+         x64\Release\builder_test.obj
+         x64\Release\factory_test.obj
+         x64\Release\prototype_test.obj
+         x64\Release\collision.obj
+         x64\Release\force.obj
+         x64\Release\kinematics.obj
+         x64\Release\complex_test.obj
+         x64\Release\quaternion_test.obj
+         C:\Users\Robert\Desktop\GameDraw\pattern\lib\patterns.lib
+         C:\Users\Robert\Desktop\GameDraw\Tools\lib\tools.lib
+         C:\Users\Robert\Desktop\GameDraw\Graphics\lib\graphics.lib
+         C:\Users\Robert\Desktop\GameDraw\Physics\lib\physics.lib
+         Generating code
+         Finished generating code
+         Test.vcxproj -> C:\Users\Robert\Desktop\GameDraw\x64\Release\test.exe
+     1>Done Building Project "C:\Users\Robert\Desktop\GameDraw\test\Test.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.82

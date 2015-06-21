@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{3f2a5ed2-34c1-4489-9b86-4b7531adb654}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\test">
+      <UniqueIdentifier>{14f86010-7d02-430c-9999-0f144341efb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\math">
+      <UniqueIdentifier>{ef15f60d-1771-4b64-a9e9-0859ef82ec7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\extensions">
+      <UniqueIdentifier>{bdfe65f8-b1a8-4bd3-8306-14a346466b2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\test\TestSuite.h" />
+    <ClInclude Include="src\extensions\File.h" />
+    <ClInclude Include="src\extensions\Console.h" />
+    <ClInclude Include="src\extensions\Color.h" />
+    <ClInclude Include="src\extensions\string_extension.h" />
+    <ClInclude Include="src\math\Matrix.h" />
+    <ClInclude Include="src\math\Vector.h" />
+    <ClInclude Include="src\math\math.h" />
+    <ClInclude Include="src\math\timer.h" />
+    <ClInclude Include="src\extensions\char_extension.h" />
+    <ClInclude Include="src\test\test_registry.h" />
+    <ClInclude Include="src\math\quaternion.h" />
+    <ClInclude Include="src\math\complex.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\extensions\Console.cpp" />
+    <ClCompile Include="src\extensions\File.cpp" />
+    <ClCompile Include="src\math\Vector.cpp" />
+    <ClCompile Include="src\math\math.cpp" />
+    <ClCompile Include="src\test\testsuite.cpp" />
+    <ClCompile Include="src\test\test_registry.cpp" />
+    <ClCompile Include="src\math\quaternion.cpp" />
+  </ItemGroup>
+</Project>

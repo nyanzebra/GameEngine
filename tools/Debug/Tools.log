@@ -1,0 +1,26 @@
+﻿Build started 15-May-15 10:21:03 PM.
+     1>Project "C:\Users\Robert\Documents\Visual Studio 2013\Projects\GameDraw\Tools\Tools.vcxproj" on node 2 (Build target(s)).
+     1>PrepareForBuild:
+         Creating directory "lib\Debug\".
+       InitializeBuildStatus:
+         Touching "Debug\Tools.tlog\unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"lib\Debug\tools.lib" /NOLOGO Debug\console.obj
+         Debug\file.obj
+         Debug\pch.obj
+         Debug\math.obj
+         Debug\matrix.obj
+         Debug\vector.obj
+         Debug\testsuite.obj
+         Tools.vcxproj -> C:\Users\Robert\Documents\Visual Studio 2013\Projects\GameDraw\Tools\lib\Debug\tools.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\Tools.tlog\unsuccessfulbuild".
+         Touching "Debug\Tools.tlog\Tools.lastbuildstate".
+     1>Done Building Project "C:\Users\Robert\Documents\Visual Studio 2013\Projects\GameDraw\Tools\Tools.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.43
