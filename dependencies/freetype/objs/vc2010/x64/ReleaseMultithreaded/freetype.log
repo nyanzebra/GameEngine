@@ -1,0 +1,48 @@
+﻿Build started 30-May-15 6:21:44 PM.
+     1>Project "C:\Users\Robert\Desktop\GameDraw\dependencies\freetype-2.5.5\builds\windows\vc2010\freetype.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:".\..\..\..\objs\vc2010\x64\freetype.lib" /NOLOGO /MACHINE:X64 /LTCG ".\..\..\..\objs\vc2010\x64\Release Multithreaded\autofit.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\bdf.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\cff.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftbase.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftbitmap.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftcache.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftdebug.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftfstype.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftgasp.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftglyph.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftgzip.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftinit.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftlzw.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftstroke.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftsystem.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\smooth.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftbbox.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftmm.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftpfr.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftsynth.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\fttype1.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftwinfnt.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftxf86.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftlcdfil.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftgxval.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftotval.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\ftpatent.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\pcf.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\pfr.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\psaux.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\pshinter.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\psmodule.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\raster.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\sfnt.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\truetype.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\type1.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\type1cid.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\type42.obj"
+         ".\..\..\..\objs\vc2010\x64\Release Multithreaded\winfnt.obj"
+         freetype.vcxproj -> C:\Users\Robert\Desktop\GameDraw\dependencies\freetype-2.5.5\builds\windows\vc2010\.\..\..\..\objs\vc2010\x64\freetype.lib
+     1>Done Building Project "C:\Users\Robert\Desktop\GameDraw\dependencies\freetype-2.5.5\builds\windows\vc2010\freetype.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.15
