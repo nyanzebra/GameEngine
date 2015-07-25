@@ -1,13 +1,13 @@
 #include "renderer.h"
 
-using namespace cppe::graphics;
+using namespace ftl::graphics;
 
-void Renderer::push(const matrix4f& matrix) {
-	transformation_stack.push(transformation_stack.top() * matrix);
+void Renderer::push(const glm::mat4& matrix) {
+	_transformation_stack.push(_transformation_stack.top() * matrix);
 }
 
 void Renderer::pop() {
-	if (transformation_stack.size() > 1) {
-		transformation_stack.pop();
+	if (_transformation_stack.size() > 1) {
+		_transformation_stack.pop();
 	}
 }

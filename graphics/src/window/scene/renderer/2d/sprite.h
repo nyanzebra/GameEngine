@@ -3,29 +3,30 @@
 #include <array>
 
 #include "../gameobject.h"
-#include "../../material/texture/texture.h"
+#include "../../material/material.h"
 
-namespace cppe {
+namespace ftl {
 	namespace graphics {
-		class Sprite : public GameObject {
+		class sprite : public game_object {
 		public:
-			Sprite(const float& x, const float& y, const float& order, const float& width, const float& height, const vector4f& color)
-				: GameObject(vector4f(x, y, order, 0), vector3f(width, height, 0), color) {
-				cooridinates[0] = vector2f(0, 0);
-				cooridinates[1] = vector2f(0, 1);
-				cooridinates[2] = vector2f(1, 1);
-				cooridinates[3] = vector2f(1, 0);
+			sprite(const glm::vec2& position, const float& order, const glm::vec2& size, const glm::vec4& color)
+                : game_object(glm::vec3(position, order), glm::vec3(size, 0), color) {
+                _coordinates[0] = glm::vec2(0, 0);
+                _coordinates[1] = glm::vec2(0, 1);
+                _coordinates[2] = glm::vec2(1, 1);
+                _coordinates[3] = glm::vec2(1, 0);
 			}
 
-			const Texture& getTexture() const;
-			void setTexture(const Texture& texture);
+			
+            void texture(const ftl::graphics::texture& texture);
+            const ftl::graphics::texture& texture() const;
 
-			const std::array<vector2f, 4>& getCooridinates() const;
-			void setCoordinates(const std::array<vector2f, 4>& cooridinates);
+            const std::array<glm::vec2, 4>& coordinates() const;
+            void coordinates(const std::array<glm::vec2, 4>& coordinates);
 
 		protected:
-			Texture texture;
-			std::array<vector2f,4> cooridinates;
+            ftl::graphics::texture _texture;
+            std::array<glm::vec2, 4> _coordinates;
 		};
 	}
 }

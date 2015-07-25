@@ -1,12 +1,13 @@
 #pragma once
 
-#include <glew.h>
+#ifdef _NULL_IMPORT_DESCRIPTOR
+#undef _NULL_IMPORT_DESCRIPTOR
+#endif
+#include <GL/glew.h>
 
 #include "extensions/console.h"
-
-using namespace cppe::io;
-
-class GLError {
+                
+class GLerror {
 public:
 	static void errorCheck() {
 		GLenum glError = glGetError();
@@ -14,18 +15,18 @@ public:
 
 			switch (glError) {
 			case GL_INVALID_ENUM:
-				console::output_line("ERROR:\tinvalid enum");
+				cppe::io::console::output_line("ERROR:\tinvalid enum");
 				break;
 
 			case GL_INVALID_VALUE:
-				console::output_line("ERROR:\tinvalid value");
+                cppe::io::console::output_line("ERROR:\tinvalid value");
 				break;
 
 			case GL_INVALID_OPERATION:
-				console::output_line("ERROR:\tinvalid operation");
+                cppe::io::console::output_line("ERROR:\tinvalid operation");
 
 			default:
-				console::output_line("ERROR:\tunknown");
+                cppe::io::console::output_line("ERROR:\tunknown");
 				break;
 			}
 		}

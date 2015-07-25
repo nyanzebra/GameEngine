@@ -6,23 +6,20 @@
 
 #include "math/timer.h"
 
-namespace cppe {
-	namespace graphics {
-#define DEFAULT_WINDOW_SIZE 800, 600
-#define DEFAULT_WINDOW_POSITION 5, 30
-#define DEFAULT_WINDOW_SIZE_X 800.0f
-#define DEFAULT_WINDOW_SIZE_Y 600.0f
+#include "../constants.h"
 
-		typedef std::map<std::string, std::unique_ptr<Scene>> Scenes;
+namespace ftl {
+	namespace graphics {        
+		typedef std::map<std::string, std::unique_ptr<scene>> scenes;
 
-		class Window {
+		class window {
 		public:
-			Window() { init(); };
-			~Window() {	glfwTerminate(); }
+			window() { init(); };
+			~window() {	glfwTerminate(); }
 
 			bool create(const char* window_name);
 
-			void setup();
+			void setup(const Dimension& dimension);
 
 			void clear();
 
@@ -32,9 +29,9 @@ namespace cppe {
 
 			void draw();
 
-			void add(const std::string& key, Scene* value);
+			void add(const std::string& key, scene* value);
 
-			Scene* operator[](const std::string& key);
+			scene* operator[](const std::string& key);
 
 			void remove(const std::string& key);
 
@@ -46,11 +43,11 @@ namespace cppe {
 
 			void cursor(const char* file_name);
 
-			const vector2f getCursorPosition() const;
+            const glm::vec2 getCursorPosition() const;
 
 			void destroy();
 			
-			Scenes scenes;
+			scenes _scenes;
 
 			void handleKeyPress(const int& key, const int& scancode, const int& action, const int& mods);
 			void handleMousePosition(const double& x_position, const double& y_position);
@@ -63,10 +60,10 @@ namespace cppe {
 			bool init();
 			void diagnositic();
 
-			Timer frames_per_second_clock;
-			unsigned int frames_per_second = 0;
-			unsigned int timer = 0;
-			GLFWwindow* window;
+			cppe::math::Timer _frames_per_second_clock;
+			unsigned int _frames_per_second = 0;
+			unsigned int _timer = 0;
+			GLFWwindow* _window;
 		};
 	}
 }

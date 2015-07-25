@@ -1,64 +1,63 @@
 #pragma once
 
-#include <glew.h>
+#include <GL/glew.h>
 #include <memory>
 #include <stack>
 #include <cstddef>
 
 #include "gameobject.h"
+#include "vertex_data.h"
 
-#include "math/matrix.h"
-#include "math/vector.h"
+#include <glm/gtc/matrix_transform.hpp>
 
 #include "buffer/buffer.h"
 
 #include "extensions/console.h"
-
-using namespace cppe::math;
-
-namespace cppe {
+                          
+namespace ftl {
 	namespace graphics {
-        struct MeshData {
-            vector3f vertex;
-            vector3f normal;
-            vector2f texture_cooridinates;
-            float texture_id = 0;
-            unsigned int color = 0;
-        };
-
 #define MAX_SPRITES		60000
 #define MAX_MODELS      10000
-#define VERTEX_SIZE		sizeof(MeshData)
+#define VERTEX_SIZE		sizeof(vertex_data)
 #define SPRITE_SIZE		VERTEX_SIZE * 4
 #define BUFFER_SIZE		SPRITE_SIZE * MAX_SPRITES
 #define INDICES_SIZE	MAX_SPRITES * 6
 
 #define VERTEX_INDEX                0
 #define TEXTURE_COORIDINATES_INDEX  1
-#define TEXTURE_INDEX               2
+#define TEXTURE_ID_INDEX            2
 #define COLOR_INDEX                 3
 #define NORMALS_INDEX               4	
 
 		class Renderer {
 		public:
-			Renderer() { transformation_stack.push(matrix4f::identity()); }
+            Renderer() { _transformation_stack.push(glm::mat4()); }
 			~Renderer() = default;
 
-			void push(const matrix4f& matrix);
+            void push(const glm::mat4& matrix);
 			void pop();
 
 			virtual void start() = 0;
 			virtual void finish() = 0;
 
-			virtual void add(const GameObject* renderable) = 0;
+			virtual void add(const game_object* renderable) = 0;
 
 			virtual void render() = 0;
-		protected:
-			GLuint vertex_array;
-            GLuint object_buffer;
-            std::unique_ptr<IndexBuffer> index_buffer;
-			bool can_render;
-			std::stack<const matrix4f> transformation_stack;
+		protected: 
+            std::unique_ptr<IndexBuffer> _ib;
+
+            vertex_data* _object_buffer;
+            unsigned* _element_buffer;
+
+            GLuint _index_buffer;
+			GLuint _vertex_array;
+            GLuint _vertex_buffer;
+
+            std::vector<unsigned> _texture_slots;
+
+			bool _can_render;
+
+            std::stack<const glm::mat4> _transformation_stack;
 		};		
 	}
 }
