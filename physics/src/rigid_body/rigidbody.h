@@ -37,10 +37,10 @@ namespace physics {
 
             std::list<triangle> triangles;
 
-            vector3f position;
-            vector3f velocity;
-            vector3f acceleration;
-            vector3f jerk;
+            glm::vec3 position;
+            glm::vec3 velocity;
+            glm::vec3 acceleration;
+            glm::vec3 jerk;
 
             Interpolate interpolate = Interpolate::NONE;
             Dimension dimension;

@@ -21,7 +21,7 @@ namespace physics {
         class WorldSpace {
         public:
             float length, width, height;
-            vector3f position;
+            glm::vec3 position;
         };
 
         class comparator {
@@ -63,7 +63,7 @@ namespace physics {
 
         private:
             float length, width, height;
-            vector3f position;
+            glm::vec3 position;
 
             unique_space_list object_containers;
         };
