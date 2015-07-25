@@ -1,5 +1,4 @@
-#add_subdirectory (freeimage)
-add_subdirectory (freetype)
+add_subdirectory (freeimage)
 add_subdirectory (freetypegl)
-#add_subdirectory (glew)
-#add_subdirectory (glfw)
+add_subdirectory (glew-1.12.0)
+add_subdirectory(glfw-3.1.1)
