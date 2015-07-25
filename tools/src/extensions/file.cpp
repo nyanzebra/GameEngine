@@ -4,13 +4,6 @@
 #include <assert.h>
 #include <stdio.h>
 #include <FreeImage.h>
-#ifdef _WIN32
-#include <direct.h>
-#define CWD _getcwd
-#else
-#include <unistd.h>
-#define CWD getcwd
-#endif
 
 using namespace cppe::io;
 
@@ -27,14 +20,6 @@ void file::append(const std::string& data) {
 	fputs(data.c_str(), file);
 
 	fclose(file);
-}
-
-void file::print_current_working_directory() {
-	char path[FILENAME_MAX];
-	CWD(path, sizeof(path));
-	path[sizeof(path) - 1] = NULL;
-
-	console::output_line("Current working directory is: ", path);
 }
 
 const std::string& file::data() const {
