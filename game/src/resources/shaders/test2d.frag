@@ -20,7 +20,6 @@ void main() {
 	if (in_data.texture_id > 0.0) {
 		int tid = int(in_data.texture_id - 0.5);
 		texture_color = in_data.color * texture(textures[tid], in_data.texture_coordinates);
-		//texture_color = vec4(tid / 8.0,0,0,1);
 	}
 	color = texture_color * intensity;
 }

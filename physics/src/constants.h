@@ -1,6 +1,6 @@
 #pragma once
 
-#include <math/vector.h>
+#include <glm/glm.hpp>
 #include <math.h>
 
 using namespace cppe::math;
@@ -52,7 +52,7 @@ namespace physics {
             return initial_acceleration + jerk * time;
         }
 
-        inline void precision_position(vector3f& position, const vector3f& velocity, const vector3f& acceleration, const float& time) {
+        inline void precision_position(glm::vec3& position, const glm::vec3& velocity, const glm::vec3& acceleration, const float& time) {
             position.x = precision_position(position.x, velocity.x, acceleration.x, time);
             position.y = precision_position(position.y, velocity.y, acceleration.y, time);
             position.z = precision_position(position.z, velocity.z, acceleration.z, time);
@@ -60,13 +60,13 @@ namespace physics {
     }
     namespace collisions {
         struct triangle {
-            vector3f central_position;
-            vector3f normal_vector;
+            glm::vec3 central_position;
+            glm::vec3 normal_vector;
             float xyz_points[9];
         };
 
-        inline const bool precision_collision(const vector3f& collision_normal, const vector3f& collision_vector) {
-            vector3f resultant = collision_normal + collision_vector;
+        inline const bool precision_collision(const glm::vec3& collision_normal, const glm::vec3& collision_vector) {
+            glm::vec3 resultant = collision_normal + collision_vector;
 
             if (resultant.x == (float)0 && resultant.y == (float)0 && resultant.z == (float)0) {
                 return true;

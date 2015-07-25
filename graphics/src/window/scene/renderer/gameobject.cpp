@@ -1,44 +1,39 @@
 #include "gameobject.h"
 
-using namespace cppe::graphics;
+using namespace ftl::graphics;
 
-GameObject::GameObject(const vector4f& position, const vector3f& size, const vector4f& color)
-	: position(position), size(size) {
-	int red = (int) color.x * 255.0f;
-    int green = (int) color.y * 255.0f;
-    int blue = (int) color.z * 255.0f;
-    int alpha = (int) color.w * 255.0f;
-
-	this->color = alpha << 24 | blue << 16 | green << 8 | red;
+game_object::game_object(const glm::vec3& position, const glm::vec3& size, const glm::vec4& color)
+    : _position(position), _size(size) {
+    game_object::color(color);
 }
 
-void GameObject::setColor(const vector4f& color) {
-	int red = color.x * 255.0f;
-	int green = color.y * 255.0f;
-	int blue = color.z * 255.0f;
-	int alpha = color.w * 255.0f;
+void game_object::color(const glm::vec4& color) {
+    int red = (int)(color.x * 255.0f);
+    int green = (int)(color.y * 255.0f);
+    int blue = (int)(color.z * 255.0f);
+    int alpha = (int)(color.w * 255.0f);
 
-	unsigned color_code = alpha << 24 | blue << 16 | green << 8 | red;
+    unsigned color_code = alpha << 24 | blue << 16 | green << 8 | red;
 
-	this->color = color_code;
+    _color = color_code;
 }
 
-const unsigned& GameObject::getColor() const {
-	return color;
+const unsigned& game_object::color() const {
+    return _color;
 }
 
-void GameObject::setPosition(const vector4f& position) {
-	this->position = position;
+void game_object::position(const glm::vec3& position) {
+    _position = position;
 }
 
-const vector4f& GameObject::getPosition() const {
-	return position;
+const glm::vec3& game_object::position() const {
+    return _position;
 }
 
-void GameObject::setSize(const vector3f& size) {
-	this->size = size;
+void game_object::size(const glm::vec3& size) {
+    _size = size;
 }
 
-const vector3f& GameObject::getSize() const {
-	return size;
+const glm::vec3& game_object::size() const {
+    return _size;
 }

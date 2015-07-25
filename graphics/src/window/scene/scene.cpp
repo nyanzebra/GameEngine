@@ -2,77 +2,85 @@
 
 #include "renderer/renderer.h"
 
-using namespace cppe::graphics;
+using namespace ftl::graphics;
 
-void Scene::bindShader(Shader& shader) {
-	shader.enable();
-	shader.setUniformMatrix4("projection_matrix", matrix4f::orthographic(-16, 16, -9, 9, -1, 1));
-	shader.disable();
-	this->shader = shader;
+void scene::bind_shader(const ftl::graphics::shader& shader) {
+    _shader = shader;
+    _shader.enable();
 }
 
-void Scene::unbindShader() {
-	shader.disable();
+void scene::attach_shader_variables() {
+    _shader.setUniformMatrix4("projection_matrix", _camera.projection());
+    _shader.setUniformMatrix4("view_matrix", _camera.view());
+}             
 
+void scene::update_shader_variables(const double& x, const double& y) {
+    _shader.enable();
+    _shader.setUniformFloatx2("light_position", glm::vec2((float)(x * 32.0f / 800.0f) - 16.0f, (float)(9.0f - y * 18.0f / 600.0f)));
 }
 
-void Scene::bindRenderer(const Dimension& dimension) {
-	renderer.release();
-	switch (dimension) {
-	case Dimension::TWO:
-		renderer = std::unique_ptr<Renderer>(new Renderer2d());
-		break;
-	case Dimension::MIXED:
-		break;
-	case Dimension::THREE:
-		renderer = std::unique_ptr<Renderer>(new Renderer3d());
-		break;
-	}
+void scene::unbind_shader() {
+    _shader.disable();
 }
 
-void Scene::unbindRenderer() {
-	renderer.release();
+void scene::bind_renderer(const Dimension& dimension) {
+    _renderer.release();
+    switch (dimension) {
+    case Dimension::TWO:
+        _renderer = std::unique_ptr<Renderer>(new Renderer2d());
+        break;
+    case Dimension::MIXED:
+        break;
+    case Dimension::THREE:
+        _renderer = std::unique_ptr<Renderer>(new Renderer3d());
+        break;
+    }
 }
 
-void Scene::setProjectionmatrix(const matrix4f& projection_matrix) {
-	this->projection_matrix = projection_matrix;
+void scene::unbind_renderer() {
+    _renderer.release();
 }
 
-void Scene::add_transform(const std::string& key, const matrix4f& matrix) {
-	gameobject_map[key].first = matrix * last_transformation;
-	last_transformation = matrix * last_transformation;
+void scene::projection_matrix(const glm::mat4& projection_matrix) {
+    _projection_matrix = projection_matrix;
 }
 
-void Scene::render() {
-	shader.enable();
-
-	if (!renderer) {
-		console::output_line("ERROR:\trenderer does not exist!!");
-	}
-	renderer->start();
-	for (GameObjectMap::iterator it = gameobject_map.begin(); it != gameobject_map.end(); ++it) {
-		if (!it->second.second.get()) {
-			console::output_line("ERROR:\tsprite does not exist!!");
-		}
-		renderer->push(it->second.first);
-		renderer->add(it->second.second.get());
-		renderer->pop();
-	}
-	renderer->finish();
-
-	renderer->render();
-
-	//shader.disable();
+void scene::add_transform(const std::string& key, const glm::mat4& matrix) {
+    _game_object_map[key].first = matrix * _last_transformation;
+    _last_transformation = matrix * _last_transformation;
 }
 
-const GameObject* Scene::operator[](const std::string& key) {
-	return gameobject_map[key].second.get();
+void scene::render() {
+    _shader.enable();
+
+    if (!_renderer) {
+        cppe::io::console::output_line("ERROR:\trenderer does not exist!!");
+    }
+    _renderer->start();
+    for (game_object_map::iterator it = _game_object_map.begin(); it != _game_object_map.end(); ++it) {
+        if (!it->second.second.get()) {
+            cppe::io::console::output_line("ERROR:\tgame object does not exist!!");
+        }
+
+        _renderer->push(it->second.first);
+        _renderer->add(it->second.second.get());
+        _renderer->pop();
+    }
+    _renderer->finish();
+
+    _renderer->render();
+
+    _shader.disable();
 }
 
-void Scene::add(const std::string& key, GameObject* value) {
-	gameobject_map[key] = { matrix4f::identity(), std::unique_ptr<GameObject>(value) };
+const game_object* scene::operator[](const std::string& key) {
+    return _game_object_map[key].second.get();
 }
 
-void Scene::remove(const std::string& key) {
-	gameobject_map.erase(key);
+void scene::add(const std::string& key, game_object* value) {
+    _game_object_map[key] = { glm::mat4(), std::unique_ptr<game_object>(value) };
+}
+
+void scene::remove(const std::string& key) {
+    _game_object_map.erase(key);
 }

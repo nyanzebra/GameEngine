@@ -1,6 +1,6 @@
 #include "input.h"
 
-using namespace cppe::graphics;
+using namespace ftl::graphics;
 
 GLFWcursor* Input::cursor = glfwCreateStandardCursor(GLFW_HRESIZE_CURSOR);
 

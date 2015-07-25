@@ -2,35 +2,34 @@
 
 #include <vector>
 
-#include <freetype-gl.h>
+//#include <freetype-gl.h>
 
 #include "../renderer.h"
 
-namespace cppe {
+namespace ftl {
 	namespace graphics {
 
-        typedef std::unique_ptr<ftgl::texture_atlas_t> unique_atlas;
-        typedef std::unique_ptr<ftgl::texture_font_t> unique_font;
+//        typedef std::unique_ptr<ftgl::texture_atlas_t> unique_atlas;
+        //typedef std::unique_ptr<ftgl::texture_font_t> unique_font;
 
 		class Renderer2d : public Renderer {
 		public:
-			Renderer2d() { init(); };
-			~Renderer2d() { glDeleteBuffers(1, &object_buffer); }
+			Renderer2d() { init(); }
+			~Renderer2d() { glDeleteBuffers(1, &_vertex_buffer); }
 
 			void start() override;
-			void add(const GameObject* renderable) override;
+			void add(const game_object* renderable) override;
 			void render() override;
 			void finish() override;
 
 		private:
 			void init();
 
-			std::vector<unsigned> texture_slots;
-			GLsizei index_count;
-			MeshData* vertices_buffer;
+			
+			GLsizei _index_count;
 
-            unique_atlas atlas;
-            unique_font font;
+            //unique_atlas atlas;
+            //unique_font font;
 		};
 	}
 }

@@ -11,17 +11,17 @@ TEST_SUITE(collision) {
 
     TEST("precision collision") {
         /*std::unique_ptr<RigidBody> rb(new RigidBody());
-        rb->position = vector3f(0, 0, 0);
-        rb->velocity = vector3f(1, 1, 0);
-        rb->acceleration = vector3f(0, 0, 0);
+        rb->position = glm::vec3(0, 0, 0);
+        rb->velocity = glm::vec3(1, 1, 0);
+        rb->acceleration = glm::vec3(0, 0, 0);
 
         WorldObject world;
         world.add_object(rb);       
 
         std::unique_ptr<RigidBody> sb(new RigidBody());
-        sb->position = vector3f(2, 2, 0);
-        sb->velocity = vector3f(-1, -1, 0);
-        sb->acceleration = vector3f(0, 0, 0);
+        sb->position = glm::vec3(2, 2, 0);
+        sb->velocity = glm::vec3(-1, -1, 0);
+        sb->acceleration = glm::vec3(0, 0, 0);
 
         world.add_object(sb);
 

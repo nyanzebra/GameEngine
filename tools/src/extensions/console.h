@@ -2,6 +2,8 @@
 
 #include "color.h"
 
+#include "file.h"
+
 #include <string>
 #include <iostream>
 
@@ -9,7 +11,11 @@ namespace cppe {
 	namespace io {
 		class console {
 		public:
-			static void setColorScheme(const unsigned& background_color_code, const unsigned& foreground_color_code) {
+            static void output_current_directory() {
+                output_line(file::current_working_directory());
+            }
+
+			static void set_color_scheme(const unsigned& background_color_code, const unsigned& foreground_color_code) {
 #ifdef linux
 				format = "";
 				background_color = AS_BACKGROUND(color_code);
@@ -28,7 +34,7 @@ namespace cppe {
 #endif
 			}
 
-			static void asDefault() {
+			static void default() {
 #ifdef linux
 				format = "";
 				foreground_color = white;

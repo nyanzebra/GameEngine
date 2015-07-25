@@ -9,9 +9,9 @@ TEST_SUITE(kinematics) {
 
     TEST("precision position") {
         RigidBody rb;
-        rb.position = vector3f(0, 0, 0);
-        rb.velocity = vector3f(1, 2, 3);
-        rb.acceleration = vector3f(1, 0, 1);
+        rb.position = glm::vec3(0, 0, 0);
+        rb.velocity = glm::vec3(1, 2, 3);
+        rb.acceleration = glm::vec3(1, 0, 1);
 
         rb.position.x = precision_position(rb.position.x, rb.velocity.x, rb.acceleration.x, 1.0f);
         rb.position.y = precision_position(rb.position.y, rb.velocity.y, rb.acceleration.y, 1.0f);
@@ -24,9 +24,9 @@ TEST_SUITE(kinematics) {
 
     TEST("precision velocity") {
         RigidBody rb;
-        rb.position = vector3f(0, 0, 0);
-        rb.velocity = vector3f(1, 2, 3);
-        rb.acceleration = vector3f(1, 0, 1);
+        rb.position = glm::vec3(0, 0, 0);
+        rb.velocity = glm::vec3(1, 2, 3);
+        rb.acceleration = glm::vec3(1, 0, 1);
 
         rb.velocity.x = precision_velocity(rb.velocity.x, rb.acceleration.x, 1.0f);
         rb.velocity.y = precision_velocity(rb.velocity.y, rb.acceleration.y, 1.0f);
@@ -39,10 +39,10 @@ TEST_SUITE(kinematics) {
 
     TEST("precision acceleration") {
         RigidBody rb;
-        rb.position = vector3f(0, 0, 0);
-        rb.velocity = vector3f(1, 2, 3);
-        rb.acceleration = vector3f(1, 0, 1);
-        rb.jerk = vector3f(2, 1, 6);
+        rb.position = glm::vec3(0, 0, 0);
+        rb.velocity = glm::vec3(1, 2, 3);
+        rb.acceleration = glm::vec3(1, 0, 1);
+        rb.jerk = glm::vec3(2, 1, 6);
 
         rb.acceleration.x = precision_acceleration(rb.acceleration.x, rb.jerk.x, 1.0f);
         rb.acceleration.y = precision_acceleration(rb.acceleration.y, rb.jerk.y, 1.0f);

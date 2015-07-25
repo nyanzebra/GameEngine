@@ -94,7 +94,7 @@ namespace cppe {
             "complexity is n^2 time",\
             "complexity is worse than n^2 time"\
         };\
-        cppe::math::Timer t;\
+        Timer t;\
         function(base_case);\
         auto t0 = t.time();\
         function(k_case);\

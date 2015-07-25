@@ -6,11 +6,11 @@
 #ifdef _WIN32
 #include "windows.h"
 #endif
-#include <glew.h>
+#include <GL/glew.h>
 #define GLFW_DLL
-#include <glfw3.h>
+#include <GLFW/glfw3.h>
 
-namespace cppe {
+namespace ftl {
 	namespace graphics {
 
 		class Input {

@@ -1,20 +1,20 @@
 #include "sprite.h"
 
-using namespace cppe::graphics;
+using namespace ftl::graphics;
 
-const Texture& Sprite::getTexture() const {
-	return texture;
+const ftl::graphics::texture& sprite::texture() const {
+	return _texture;
 }
 
-void Sprite::setTexture(const Texture& texture) {
-	this->texture = texture;
-	this->texture.bind();
+void sprite::texture(const ftl::graphics::texture& texture) {
+	_texture = texture;
+	_texture.bind();
 }
 
-const std::array<vector2f, 4>& Sprite::getCooridinates() const {
-	return cooridinates;
+const std::array<glm::vec2, 4>& sprite::coordinates() const {
+	return _coordinates;
 }
 
-void Sprite::setCoordinates(const std::array<vector2f, 4>& cooridinates) {
-	this->cooridinates = cooridinates;
+void sprite::coordinates(const std::array<glm::vec2, 4>& coordinates) {
+	_coordinates = coordinates;
 }

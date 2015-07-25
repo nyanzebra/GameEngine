@@ -2,15 +2,17 @@
 
 #include "../gameobject.h"
 
-namespace cppe {
+namespace ftl {
     namespace graphics {
-        class Label : public GameObject {
+        class Label : public game_object {
         public:
-            Label(const std::string& text, const vector4f& position, const vector3f& size, const vector4f& color);
+            Label(const std::string& text, const glm::vec4& position, const glm::vec3& size, const glm::vec4& color) : _text(text) {
+                game_object(position, size, color);
+            }
             ~Label() = default;
 
         private:
-            std::string text;
+            std::string _text;
         };
     }
 }

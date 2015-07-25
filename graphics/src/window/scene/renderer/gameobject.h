@@ -1,32 +1,29 @@
 #pragma once
 
-#include "math/vector.h"
+#include <glm/glm.hpp>
 
-using namespace cppe::math;
+namespace ftl {
+    namespace graphics {
+        class game_object {
+        public:
+            game_object() = default;
+            game_object(const glm::vec3& position, const glm::vec3& size, const glm::vec4& color);
+            ~game_object() = default;
 
-namespace cppe {
-	namespace graphics {
-
-		class GameObject {
-		public:
-			GameObject() = default;
-			GameObject(const vector4f& position, const vector3f& size, const vector4f& color);
-			~GameObject() = default;
-
-			const unsigned& getColor() const;
-			void setColor(const vector4f& color);
+            const unsigned& color() const;
+            void color(const glm::vec4& color);
 
 
-			const vector4f& getPosition() const;
-			void setPosition(const vector4f& position);
+            const glm::vec3& position() const;
+            void position(const glm::vec3& position);
 
-			const vector3f& getSize() const;
-			void setSize(const vector3f& size);
+            const glm::vec3& size() const;
+            void size(const glm::vec3& size);
 
-		protected:
-			unsigned color;
-			vector4f position;
-			vector3f size;
-		};
-	}
+        protected:
+            unsigned _color;
+            glm::vec3 _position;
+            glm::vec3 _size;
+        };
+    }
 }
