@@ -2,44 +2,31 @@
 
 #include <list>
 
-#include "math/vector.h"
+#include "../gameobject.h"
+
 #include "../../material/material.h"
-
-using namespace cppe::math;
-
-namespace cppe {
+#include "../../material/mesh/mesh.h"
+                         
+namespace ftl {
     namespace graphics {
-        class Model {
+        class model : public game_object {
         public:
-            Model() = default;
-            Model(const Model&& Model) : Model_vertices(Model.Model_vertices), material(Model.material), texture_vertices(Model.texture_vertices) {}
-            ~Model() = default;
+            model() = default;
+            model(const model&& model) : _mesh(model._mesh), _material(model._material) {}
+            model(const glm::vec3& position, const glm::vec3& size, const glm::vec4& color, const mesh& mesh, const material& material)
+                : game_object(glm::vec3(position), size, color), _mesh(mesh), _material(material) {}
+            ~model() = default;
 
-            void load(const std::string& resource_name);
+            const ftl::graphics::material& material() const;
+            const ftl::graphics::mesh& mesh() const;
 
-            void bindVertices(const vector3f vertices[], const unsigned& number_of_vertices);
-
-            void bindMaterial(const Material& material, const vector3f vertices[], const unsigned& number_of_vertices);
-
-            const std::list<vector3f> getModelVertices() const;
-
-            const std::list<vector3f> getTextureVertices() const;
-
-            void addModelVertex(const vector3f& vertex);
-
-            void addTextureVertex(const vector3f& vertex);
-
-            const Material& getMaterial() const;
+            void material(const ftl::graphics::material& material);
+            void mesh(const ftl::graphics::mesh& mesh);
 
         private:
-            const std::vector<vector3f> extract(const std::string& file_data, unsigned& counter, const std::string& T) const;
-            const std::string extract_line(const std::string& file_data, unsigned& counter) const;
-            const std::vector<unsigned> extract_faces(const std::string& file_data, unsigned& counter) const;
+            ftl::graphics::mesh _mesh;
 
-
-            std::list<vector3f> Model_vertices;
-            std::list<vector3f> texture_vertices;
-            Material material;
+            ftl::graphics::material _material;
         };
     }
 }

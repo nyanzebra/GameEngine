@@ -9,38 +9,38 @@
 #ifdef _WIN32
 #include "windows.h"
 #endif
-#include <glew.h>
+#include <GL/glew.h>
 #define GLFW_DLL
-#include <glfw3.h>
+#include <GLFW/glfw3.h>
 
-namespace cppe {
+namespace ftl {
 	namespace graphics {
-		struct Image {
-			const char* name;
-			unsigned char* data;
-			unsigned int width;
-			unsigned int height;
-			int depth;
-			unsigned bits_per_pixel;
+		struct image {
+			const char* _name;
+			unsigned char* _data;
+			unsigned int _width;
+			unsigned int _height;
+			int _depth;
+			unsigned _bits_per_pixel;
 		};
 
-		class Texture {
+		class texture {
 		public:
-			Texture() = default;
-			Texture(const std::string& resource_name,
+			texture() = default;
+			texture(const std::string& resource_name,
 					const Dimension& dimension,
 					const Aliasing& aliasing,
 					const bool& generate_mipmap);
-			~Texture() = default;
+			~texture() = default;
 
 			const bool load(const std::string& resource_name,
 							const Dimension& dimension,
 							const Aliasing& aliasing,
 							const bool& generate_mipmap);
 
-			const Image& getImage() const;
+			const image& image() const;
 
-			const GLuint& getID() const;
+			const GLuint& ID() const;
 
 			void bind() const;
 			void unbind() const;
@@ -52,9 +52,9 @@ namespace cppe {
 
 			BYTE* load_image(const char* resource_name, unsigned* width, unsigned* height);
 
-			Dimension dimension;
-			GLuint texture = 0;
-			Image image;
+			Dimension _dimension;
+			GLuint _texture = 0;
+			ftl::graphics::image _image;
 		};
 	}
 }

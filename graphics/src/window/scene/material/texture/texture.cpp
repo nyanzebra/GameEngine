@@ -7,20 +7,19 @@
 
 #include "../../../../errors/glerror.h"
 
-using namespace cppe::graphics;
-using namespace cppe::io;
+using namespace ftl::graphics;
 
-Texture::Texture(const std::string& resource_name, const Dimension& dimension, const Aliasing& aliasing, const bool& generate_mipmap) : dimension(dimension) {
-	if (texture == 0 && !load(resource_name, dimension, aliasing, generate_mipmap)) {
-		console::output_line("ERROR:\tfailed to read file... ", resource_name);
+texture::texture(const std::string& resource_name, const Dimension& dimension, const Aliasing& aliasing, const bool& generate_mipmap) : _dimension(dimension) {
+	if (_texture == 0 && !load(resource_name, dimension, aliasing, generate_mipmap)) {
+		cppe::io::console::output_line("ERROR:\tfailed to read file... ", resource_name);
 	}
 }
 
-const GLuint& Texture::getID() const {
-	return texture;
+const GLuint& texture::ID() const {
+	return _texture;
 }
 
-BYTE* Texture::load_image(const char* resource_name, unsigned* width, unsigned* height) {
+BYTE* texture::load_image(const char* resource_name, unsigned* width, unsigned* height) {
 	FREE_IMAGE_FORMAT fif = FIF_UNKNOWN;
 	FIBITMAP* dib = nullptr;
 	fif = FreeImage_GetFileType(resource_name, 0);
@@ -46,8 +45,8 @@ BYTE* Texture::load_image(const char* resource_name, unsigned* width, unsigned* 
 	return result;
 }
 
-const bool Texture::load(const std::string& resource_name, const Dimension& dimension, const Aliasing& aliasing, const bool& generate_mipmap) {
-	image.name = resource_name.c_str();
+const bool texture::load(const std::string& resource_name, const Dimension& dimension, const Aliasing& aliasing, const bool& generate_mipmap) {
+	_image._name = resource_name.c_str();
 
 	FREE_IMAGE_FORMAT fif = FIF_UNKNOWN;
 	FIBITMAP* dib = nullptr;
@@ -68,67 +67,82 @@ const bool Texture::load(const std::string& resource_name, const Dimension& dime
 		return false;
 	}
 
-	image.width = FreeImage_GetWidth(dib);
-	image.height = FreeImage_GetHeight(dib);
-	image.bits_per_pixel = FreeImage_GetBPP(dib);
-	int size = image.width * image.height * (image.bits_per_pixel / 8);
+	_image._width = FreeImage_GetWidth(dib);
+	_image._height = FreeImage_GetHeight(dib);
+	_image._bits_per_pixel = FreeImage_GetBPP(dib);
+	int size = _image._width * _image._height * (_image._bits_per_pixel / 8);
 	BYTE* pixels = FreeImage_GetBits(dib);
-	image.data = new BYTE[size];
-	memcpy(image.data, pixels, size);
+	_image._data = new BYTE[size];
+	memcpy(_image._data, pixels, size);
 	
-	glGenTextures(1, &texture);
+	glGenTextures(1, &_texture);
 	configure(dimension, aliasing);
     FreeImage_Unload(dib);
-	GLError::errorCheck();
+	GLerror::errorCheck();
 
 	return true;
 }
 
-void Texture::configure(const Dimension& dimension, const Aliasing& aliasing) {
+void texture::configure(const Dimension& dimension, const Aliasing& aliasing) {
 	switch (dimension) {
 	case Dimension::TWO:
 		configure_dimension(GL_TEXTURE_2D, aliasing);
-		if (image.bits_per_pixel == 32) {
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, image.width, image.height, 0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)image.data);
+		if (_image._bits_per_pixel == 32) {
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, _image._width, _image._height, 0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)_image._data);
 		} else {
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, image.width, image.height, 0, GL_BGR, GL_UNSIGNED_BYTE, (void*)image.data);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, _image._width, _image._height, 0, GL_BGR, GL_UNSIGNED_BYTE, (void*)_image._data);
 		}
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		glBindTexture(GL_TEXTURE_2D, 0);
-		break;
+        break;
 	case Dimension::THREE:
+        configure_dimension(GL_TEXTURE_2D, aliasing);
+        if (_image._bits_per_pixel == 32) {
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, _image._width, _image._height, 0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)_image._data);
+        } else {
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, _image._width, _image._height, 0, GL_BGR, GL_UNSIGNED_BYTE, (void*)_image._data);
+        }
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glBindTexture(GL_TEXTURE_2D, 0);
 		/*configure_dimension(GL_TEXTURE_3D, aliasing);
 		glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_R, GL_REPEAT);
-		glTexImage3D(GL_TEXTURE_3D, 0, GL_RGBA, image.width, image.height, image.depth, GL_BGRA, GL_UNSIGNED_BYTE, image.data);
-		glBindTexture(GL_TEXTURE_3D, 0);*/
+		glTeximage3D(GL_TEXTURE_3D, 0, GL_RGBA, _image._width, _image._height, image.depth, GL_BGRA, GL_UNSIGNED_BYTE, _image._data);
+		glBindtexture(GL_TEXTURE_3D, 0);*/
 		break;
 	}
 }
-void Texture::configure_dimension(const int& dimension, const Aliasing& aliasing) {
+void texture::configure_dimension(const int& dimension, const Aliasing& aliasing) {
 	switch (aliasing) {
 	case Aliasing::OFF:
-		glBindTexture(dimension, texture);
+		glBindTexture(dimension, _texture);
 		configure_alias(dimension, GL_LINEAR);
 		break;
 	case Aliasing::ON:
-		glBindTexture(dimension, texture);
+		glBindTexture(dimension, _texture);
 		configure_alias(dimension, GL_NEAREST);
 	}
 }
-void Texture::configure_alias(const int& dimension, const int& aliasing) {
+void texture::configure_alias(const int& dimension, const int& aliasing) {
 	glTexParameteri(dimension, GL_TEXTURE_MIN_FILTER, aliasing);
 	glTexParameteri(dimension, GL_TEXTURE_MAG_FILTER, aliasing);
 }
 
-const Image& Texture::getImage() const {
-	return image;
+const image& texture::image() const {
+	return _image;
 }
 
-void Texture::bind() const {
-	glBindTexture(GL_TEXTURE_2D, texture);
+void texture::bind() const {
+	glBindTexture(GL_TEXTURE_2D, _texture);
 }
 
-void Texture::unbind() const {
-	glDeleteTextures(1, &texture);
+void texture::unbind() const {
+	glDeleteTextures(1, &_texture);
 }
