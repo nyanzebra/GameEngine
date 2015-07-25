@@ -1,21 +1,21 @@
 #include "material.h"
 
-using namespace cppe::graphics;
+using namespace ftl::graphics;
 
-Texture& Material::getTexture() {
-	return texture;
-}
-Shader& Material::getShader() {
-	return shader;
+const ftl::graphics::texture& material::texture() const {
+	return _texture;
 }
 
-void Material::setShader(const Shader& shader) {
-	this->shader = shader;
-	this->shader.enable();
-	this->shader.setUniformMatrix4("projection_matrix", matrix4f::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
-	this->shader.disable();
+const ftl::graphics::shader& material::shader() const {
+	return _shader;
 }
-void Material::setTexture(const Texture& texture) {
-	this->texture = texture;
+
+void material::shader(const ftl::graphics::shader& shader) {
+	_shader = shader;
+	_shader.enable(); 
+}
+void material::texture(const ftl::graphics::texture& texture) {
+	_texture = texture;
+    _texture.bind();
 }
 	 
