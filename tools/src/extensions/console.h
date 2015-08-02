@@ -8,82 +8,96 @@
 #include <iostream>
 
 namespace cppe {
-	namespace io {
-		class console {
-		public:
+    namespace io {
+#ifdef _WIN32
+#include <direct.h>
+#ifndef CWD
+#define CWD _getcwd
+#endif
+#else
+#include <unistd.h>
+#ifndef CWD
+#define CWD getcwd
+#endif
+#endif
+        inline const std::string current_working_directory() { char path[FILENAME_MAX]; CWD(path, sizeof(path)); path[sizeof(path) - 1] = NULL; return path; }
+#define CURRENT_WORKING_DIRECTORY current_working_directory
+
+        class console {
+        public:
             static void output_current_directory() {
-                output_line(file::current_working_directory());
+                output_line(CURRENT_WORKING_DIRECTORY);
             }
 
-			static void set_color_scheme(const unsigned& background_color_code, const unsigned& foreground_color_code) {
+            static void set_color_scheme(const unsigned& background_color_code, const unsigned& foreground_color_code) {
 #ifdef linux
-				format = "";
-				background_color = AS_BACKGROUND(color_code);
+                format = "";
+                background_color = AS_BACKGROUND(color_code);
 #else
-				foreground_color = foreground_color_code;
-				background_color = background_color_code;
+                foreground_color = foreground_color_code;
+                background_color = background_color_code;
 
-				std::string color_scheme = "color ";
-				char background = AS_ASCII(background_color_code);
-				char foreground = AS_ASCII(foreground_color_code);
+                std::string color_scheme = "color ";
+                char background = AS_ASCII(background_color_code);
+                char foreground = AS_ASCII(foreground_color_code);
 
-				color_scheme += background;
-				color_scheme += foreground;
+                color_scheme += background;
+                color_scheme += foreground;
 
-				system(color_scheme.c_str());
+                system(color_scheme.c_str());
 #endif
-			}
+            }
 
-			static void default() {
+            static void default() {
 #ifdef linux
-				format = "";
-				foreground_color = white;
-				background_color = purple;
+                format = "";
+                foreground_color = white;
+                background_color = purple;
 #else
-				foreground_color = WHITE;
-				background_color = BLACK;
+                foreground_color = WHITE;
+                background_color = BLACK;
 
-				std::string color_scheme = "color ";
-				color_scheme += char(AS_ASCII(background_color));
-				color_scheme += char(AS_ASCII(foreground_color));
+                std::string color_scheme = "color ";
+                color_scheme += char(AS_ASCII(background_color));
+                color_scheme += char(AS_ASCII(foreground_color));
 
-				system(color_scheme.c_str());
+                system(color_scheme.c_str());
 #endif
-			}
+            }
 
-			template <typename T, typename... U>
-			static void colored_output(const unsigned& color_code, const T& arg, const U&... args) {
+            template <typename T, typename... U>
+            static void colored_output(const unsigned& color_code, const T& arg, const U&... args) {
 #ifdef linux
-				std::cout << "\033[" << color_code << "m";
+                std::cout << "\033[" << color_code << "m";
 #else
-				HANDLE handle;
-				handle = GetStdHandle(STD_OUTPUT_HANDLE);
-				SetConsoleTextAttribute(handle, color_code | AS_BACKGROUND(background_color));
+                HANDLE handle;
+                handle = GetStdHandle(STD_OUTPUT_HANDLE);
+                SetConsoleTextAttribute(handle, color_code | AS_BACKGROUND(background_color));
 #endif
-				std::cout << arg;
-				if (sizeof...(args) == 0) {
-					return;
-				}
-				colored_output(color_code, args...);
-			}
+                std::cout << arg;
+                if (sizeof...(args) == 0) {
+                    return;
+                }
+                colored_output(color_code, args...);
+            }
 
-			template <typename T, typename... U>
-			static void colored_output_line(const unsigned& color_code, const T& arg, const U&... args) {
+            template <typename T, typename... U>
+            static void colored_output_line(const unsigned& color_code, const T& arg, const U&... args) {
 #ifdef linux
-				std::cout << "\033[" << color_code << "m";
+                std::cout << "\033[" << color_code << "m";
 #else
-				HANDLE handle;
-				handle = GetStdHandle(STD_OUTPUT_HANDLE);
-				SetConsoleTextAttribute(handle, color_code | AS_BACKGROUND(background_color));
+                HANDLE handle;
+                handle = GetStdHandle(STD_OUTPUT_HANDLE);
+                SetConsoleTextAttribute(handle, color_code | AS_BACKGROUND(background_color));
 #endif
-				colored_output(color_code, arg, args...);
-				std::cout << std::endl;
-			}
+                colored_output(color_code, arg, args...);
+                std::cout << std::endl;
+            }
 
-			template <typename T, typename... U>
-			static void output(const T& arg, const U&... args) {
-				colored_output(foreground_color, arg, args...);
-			}
+            template <typename T, typename... U>
+            static void output(const T& arg, const U&... args) {
+                colored_output(foreground_color, arg, args...);
+            }
 
             template <typename T>
             static void input(T& value) {
@@ -91,32 +105,32 @@ namespace cppe {
                 std::cin >> value;
             }
 
-			template <typename T, typename... U>
-			static void output_line(const T& arg, const U&... args) {
-				colored_output_line(foreground_color, arg, args...);
-			}
+            template <typename T, typename... U>
+            static void output_line(const T& arg, const U&... args) {
+                colored_output_line(foreground_color, arg, args...);
+            }
 
-			static void output_line() {
-				std::cout << std::endl;
-			}
+            static void output_line() {
+                std::cout << std::endl;
+            }
 
-			template <typename T>
-			static void colored_output(const unsigned& color_code, const T& arg) {
+            template <typename T>
+            static void colored_output(const unsigned& color_code, const T& arg) {
 #ifdef linux
-				std::cout << "\033[" << color_code << "m";
+                std::cout << "\033[" << color_code << "m";
 #else
-				HANDLE handle;
-				handle = GetStdHandle(STD_OUTPUT_HANDLE);
-				SetConsoleTextAttribute(handle, color_code | AS_BACKGROUND(background_color));
+                HANDLE handle;
+                handle = GetStdHandle(STD_OUTPUT_HANDLE);
+                SetConsoleTextAttribute(handle, color_code | AS_BACKGROUND(background_color));
 #endif
-				std::cout << arg;
-			}
+                std::cout << arg;
+            }
 
         private:
-			char* format = "";
-			static unsigned foreground_color;
-			static unsigned background_color;
-			unsigned attributes = 0;
-		};
-	}
+            char* format = "";
+            static unsigned foreground_color;
+            static unsigned background_color;
+            unsigned attributes = 0;
+        };
+    }
 }

@@ -52,15 +52,15 @@ void shader::program_info(const GLuint& program, const GLint& size) const {
 }
 
 void shader::load(const std::string& vertex, const std::string& fragment) {
-    cppe::io::file file_vertex(vertex);
-    file_vertex.read();
+    cppe::io::file<> file_vertex(vertex);
+    file_vertex.read(FILE_ALL);
 
-    std::string data_vertex = file_vertex.data();
+    std::string data_vertex = file_vertex.data_ptr();
 
-    cppe::io::file file_fragment(fragment);
-    file_fragment.read();
+    cppe::io::file<> file_fragment(fragment);
+    file_fragment.read(FILE_ALL);
 
-    std::string data_fragment = file_fragment.data();
+    std::string data_fragment = file_fragment.data_ptr();
 
     GLuint shader_program = glCreateProgram();
 
@@ -119,89 +119,89 @@ const GLuint shader::compile_fragment(const char* data_fragment) const {
     return shader_fragment;
 }
 
-void shader::setUniformFloatx1(const char* uniform_object_name, const float& value) {
+void shader::uniform_floatx1(const char* uniform_object_name, const float& value) {
     glUniform1f(uniform_location(uniform_object_name), value);
 }
-void shader::setUniformFloatx2(const char* uniform_object_name, const glm::vec2& value) {
+void shader::uniform_floatx2(const char* uniform_object_name, const glm::vec2& value) {
     glUniform2f(uniform_location(uniform_object_name), value.x, value.y);
 }
-void shader::setUniformFloatx3(const char* uniform_object_name, const glm::vec3& value) {
+void shader::uniform_floatx3(const char* uniform_object_name, const glm::vec3& value) {
     glUniform3f(uniform_location(uniform_object_name), value.x, value.y, value.z);
 }
-void shader::setUniformFloatx4(const char* uniform_object_name, const glm::vec4& value) {
+void shader::uniform_floatx4(const char* uniform_object_name, const glm::vec4& value) {
     glUniform4f(uniform_location(uniform_object_name), value.x, value.y, value.z, value.w);
 }
 
-void shader::setUniformIntx1(const char* uniform_object_name, const int& value) {
+void shader::uniform_intx1(const char* uniform_object_name, const int& value) {
     glUniform1i(uniform_location(uniform_object_name), value);
 }
-void shader::setUniformIntx2(const char* uniform_object_name, const glm::vec2& value) {
+void shader::uniform_intx2(const char* uniform_object_name, const glm::tvec2<int>& value) {
     glUniform2i(uniform_location(uniform_object_name), value.x, value.y);
 }
-void shader::setUniformIntx3(const char* uniform_object_name, const glm::vec3& value) {
+void shader::uniform_intx3(const char* uniform_object_name, const glm::tvec3<int>& value) {
     glUniform3i(uniform_location(uniform_object_name), value.x, value.y, value.z);
 }
-void shader::setUniformIntx4(const char* uniform_object_name, const glm::vec4& value) {
+void shader::uniform_intx4(const char* uniform_object_name, const glm::tvec4<int>& value) {
     glUniform4i(uniform_location(uniform_object_name), value.x, value.y, value.z, value.w);
 }
 
-void shader::setUniformUIntx1(const char* uniform_object_name, const unsigned int& value) {
+void shader::uniform_uintx1(const char* uniform_object_name, const unsigned int& value) {
     glUniform1ui(uniform_location(uniform_object_name), value);
 }
-void shader::setUniformUIntx2(const char* uniform_object_name, const glm::vec2& value) {
+void shader::uniform_uintx2(const char* uniform_object_name, const glm::tvec2<unsigned int>& value) {
     glUniform2ui(uniform_location(uniform_object_name), value.x, value.y);
 }
-void shader::setUniformUIntx3(const char* uniform_object_name, const glm::vec3& value) {
+void shader::uniform_uintx3(const char* uniform_object_name, const glm::tvec3<unsigned int>& value) {
     glUniform3ui(uniform_location(uniform_object_name), value.x, value.y, value.z);
 }
-void shader::setUniformUIntx4(const char* uniform_object_name, const glm::vec4& value) {
+void shader::uniform_uintx4(const char* uniform_object_name, const glm::tvec4<unsigned int>& value) {
     glUniform4ui(uniform_location(uniform_object_name), value.x, value.y, value.z, value.w);
 }
 
-void shader::setUniformMatrix4(const char* uniform_object_name, const glm::mat4& value) {
+void shader::uniform_matrix4(const char* uniform_object_name, const glm::mat4& value) {
     glm::mat4      temp = value;
     glUniformMatrix4fv(uniform_location(uniform_object_name), 1, GL_FALSE, &temp[0][0]);
 }
 
-void shader::setUniformFloatvectorx1(const char* uniform_object_name, const unsigned int& count, const float* value) {
+void shader::uniform_float_vectorx1(const char* uniform_object_name, const unsigned int& count, const float* value) {
     glUniform1fv(uniform_location(uniform_object_name), count, value);
 }
-void shader::setUniformFloatvectorx2(const char* uniform_object_name, const unsigned int& count, const float* value) {
+void shader::uniform_float_vectorx2(const char* uniform_object_name, const unsigned int& count, const float* value) {
     glUniform2fv(uniform_location(uniform_object_name), count, value);
 }
-void shader::setUniformFloatvectorx3(const char* uniform_object_name, const unsigned int& count, const float* value) {
+void shader::uniform_float_vectorx3(const char* uniform_object_name, const unsigned int& count, const float* value) {
     glUniform3fv(uniform_location(uniform_object_name), count, value);
 }
-void shader::setUniformFloatvectorx4(const char* uniform_object_name, const unsigned int& count, const float* value) {
+void shader::uniform_float_vectorx4(const char* uniform_object_name, const unsigned int& count, const float* value) {
     glUniform4fv(uniform_location(uniform_object_name), count, value);
 }
 
-void shader::setUniformIntvectorx1(const char* uniform_object_name, const unsigned int& count, const int* value) {
+void shader::uniform_int_vectorx1(const char* uniform_object_name, const unsigned int& count, const int* value) {
     glUniform1iv(uniform_location(uniform_object_name), count, value);
 }
-void shader::setUniformIntvectorx2(const char* uniform_object_name, const unsigned int& count, const int* value) {
+void shader::uniform_int_vectorx2(const char* uniform_object_name, const unsigned int& count, const int* value) {
     glUniform2iv(uniform_location(uniform_object_name), count, value);
 }
-void shader::setUniformIntvectorx3(const char* uniform_object_name, const unsigned int& count, const int* value) {
+void shader::uniform_int_vectorx3(const char* uniform_object_name, const unsigned int& count, const int* value) {
     glUniform3iv(uniform_location(uniform_object_name), count, value);
 }
-void shader::setUniformIntvectorx4(const char* uniform_object_name, const unsigned int& count, const int* value) {
+void shader::uniform_int_vectorx4(const char* uniform_object_name, const unsigned int& count, const int* value) {
     glUniform4iv(uniform_location(uniform_object_name), count, value);
 }
 
-void shader::setUniformUIntvectorx1(const char* uniform_object_name, const unsigned int& count, const unsigned int* value) {
+void shader::uniform_uint_vectorx1(const char* uniform_object_name, const unsigned int& count, const unsigned int* value) {
     glUniform1uiv(uniform_location(uniform_object_name), count, value);
 
 }
-void shader::setUniformUIntvectorx2(const char* uniform_object_name, const unsigned int& count, const unsigned int* value) {
+void shader::uniform_uint_vectorx2(const char* uniform_object_name, const unsigned int& count, const unsigned int* value) {
     glUniform2uiv(uniform_location(uniform_object_name), count, value);
 
 }
-void shader::setUniformUIntvectorx3(const char* uniform_object_name, const unsigned int& count, const unsigned int* value) {
+void shader::uniform_uint_vectorx3(const char* uniform_object_name, const unsigned int& count, const unsigned int* value) {
     glUniform3uiv(uniform_location(uniform_object_name), count, value);
 
 }
-void shader::setUniformUIntvectorx4(const char* uniform_object_name, const unsigned int& count, const unsigned int* value) {
+void shader::uniform_uint_vectorx4(const char* uniform_object_name, const unsigned int& count, const unsigned int* value) {
     glUniform4uiv(uniform_location(uniform_object_name), count, value);
 
 }

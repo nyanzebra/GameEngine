@@ -8,7 +8,7 @@ using namespace physics::force;
 TEST_SUITE(force) {
 
     TEST("precision force") {
-        RigidBody rb;
+        rigidbody rb;
         rb.mass = (float) UNIT(CENTI, 20);
         rb.acceleration = glm::vec3(1, 0, 1);
 
