@@ -12,97 +12,71 @@
 #include <GLFW/glfw3.h>
 
 namespace ftl {
-	namespace graphics {
-		class shader {
-		public:
-			shader() = default;
-			shader(const std::string& vertex, const std::string& fragment) {
-				load(vertex, fragment);
-			}
-			~shader() { glDeleteProgram(_shader); }
+    namespace graphics {
+        class shader {
+        public:
+            shader() = default;
+            shader(const std::string& vertex, const std::string& fragment) {
+                load(vertex, fragment);
+            }
+            ~shader() { glDeleteProgram(_shader); }
 
             const GLuint& value() { return _shader; }
 
-			void load(const std::string& vertex, const std::string& fragment);
-			
-			void enable();
+            void load(const std::string& vertex, const std::string& fragment);
 
-			const bool is_enabled() const;
+            void enable();
 
-			void disable();
+            const bool is_enabled() const;
 
-			void setUniformFloatx1(const char* uniform_object_name, const float& value);
-			void setUniformFloatx2(const char* uniform_object_name, const glm::vec2& value);
-			void setUniformFloatx3(const char* uniform_object_name, const glm::vec3& value);
-			void setUniformFloatx4(const char* uniform_object_name, const glm::vec4& value);
+            void disable();
 
-			void setUniformIntx1(const char* uniform_object_name, const int& value);
-			void setUniformIntx2(const char* uniform_object_name, const glm::vec2& value);
-			void setUniformIntx3(const char* uniform_object_name, const glm::vec3& value);
-			void setUniformIntx4(const char* uniform_object_name, const glm::vec4& value);
+            void uniform_floatx1(const char* uniform_object_name, const float& value);
+            void uniform_floatx2(const char* uniform_object_name, const glm::vec2& value);
+            void uniform_floatx3(const char* uniform_object_name, const glm::vec3& value);
+            void uniform_floatx4(const char* uniform_object_name, const glm::vec4& value);
 
-			void setUniformUIntx1(const char* uniform_object_name, const unsigned int& value);
-			void setUniformUIntx2(const char* uniform_object_name, const glm::vec2& value);
-			void setUniformUIntx3(const char* uniform_object_name, const glm::vec3& value);
-			void setUniformUIntx4(const char* uniform_object_name, const glm::vec4& value);
+            void uniform_intx1(const char* uniform_object_name, const int& value);
+            void uniform_intx2(const char* uniform_object_name, const glm::tvec2<int>& value);
+            void uniform_intx3(const char* uniform_object_name, const glm::tvec3<int>& value);
+            void uniform_intx4(const char* uniform_object_name, const glm::tvec4<int>& value);
 
-            void setUniformMatrix4(const char* uniform_object_name, const glm::mat4& value);
+            void uniform_uintx1(const char* uniform_object_name, const unsigned int& value);
+            void uniform_uintx2(const char* uniform_object_name, const glm::tvec2<unsigned int>& value);
+            void uniform_uintx3(const char* uniform_object_name, const glm::tvec3<unsigned int>& value);
+            void uniform_uintx4(const char* uniform_object_name, const glm::tvec4<unsigned int>& value);
 
-			void setUniformFloatvectorx1(const char* uniform_object_name,
-										 const unsigned int& count, 
-										 const float* value);
-			void setUniformFloatvectorx2(const char* uniform_object_name,
-										 const unsigned int& count,
-										 const float* value);
-			void setUniformFloatvectorx3(const char* uniform_object_name,
-										 const unsigned int& count,
-										 const float* value);
-			void setUniformFloatvectorx4(const char* uniform_object_name,
-										 const unsigned int& count,
-										 const float* value);
+            void uniform_matrix4(const char* uniform_object_name, const glm::mat4& value);
 
-			void setUniformIntvectorx1(const char* uniform_object_name,
-									   const unsigned int& count,
-								       const int* value);
-			void setUniformIntvectorx2(const char* uniform_object_name,
-									   const unsigned int& count,
-									   const int* value);
-			void setUniformIntvectorx3(const char* uniform_object_name,
-									   const unsigned int& count,
-									   const int* value);
-			void setUniformIntvectorx4(const char* uniform_object_name,
-									   const unsigned int& count,
-									   const int* value);
+            void uniform_float_vectorx1(const char* uniform_object_name, const unsigned int& count, const float* value);
+            void uniform_float_vectorx2(const char* uniform_object_name, const unsigned int& count, const float* value);
+            void uniform_float_vectorx3(const char* uniform_object_name, const unsigned int& count, const float* value);
+            void uniform_float_vectorx4(const char* uniform_object_name, const unsigned int& count, const float* value);
 
-			void setUniformUIntvectorx1(const char* uniform_object_name, 
-										const unsigned int& count,
-										const unsigned int* value);
-			void setUniformUIntvectorx2(const char* uniform_object_name,
-										const unsigned int& count,
-										const unsigned int* value);
-			void setUniformUIntvectorx3(const char* uniform_object_name,
-										const unsigned int& count,
-										const unsigned int* value);
-			void setUniformUIntvectorx4(const char* uniform_object_name,
-										const unsigned int& count,
-										const unsigned int* value);
+            void uniform_int_vectorx1(const char* uniform_object_name, const unsigned int& count, const int* value);
+            void uniform_int_vectorx2(const char* uniform_object_name, const unsigned int& count, const int* value);
+            void uniform_int_vectorx3(const char* uniform_object_name, const unsigned int& count, const int* value);
+            void uniform_int_vectorx4(const char* uniform_object_name, const unsigned int& count, const int* value);
 
+            void uniform_uint_vectorx1(const char* uniform_object_name, const unsigned int& count, const unsigned int* value);
+            void uniform_uint_vectorx2(const char* uniform_object_name, const unsigned int& count, const unsigned int* value);
+            void uniform_uint_vectorx3(const char* uniform_object_name, const unsigned int& count, const unsigned int* value);
+            void uniform_uint_vectorx4(const char* uniform_object_name, const unsigned int& count, const unsigned int* value);      
 
+        private:
+            bool is_valid(const GLuint& program) const;
+            void shader_info(const GLuint& shader) const;
+            void program_info(const GLuint& program, const GLint& size) const;
 
-		private:
-			bool is_valid(const GLuint& program) const;
-			void shader_info(const GLuint& shader) const;
-			void program_info(const GLuint& program, const GLint& size) const;
+            bool _is_enabled;
 
-			bool _is_enabled;
+            GLuint _shader;
 
-			GLuint _shader;
+            const GLint uniform_location(const char* uniform_object_name);
 
-			const GLint uniform_location(const char* uniform_object_name);
+            const GLuint compile_vertex(const char* data_vertex) const;
 
-			const GLuint compile_vertex(const char* data_vertex) const;
-
-			const GLuint compile_fragment(const char* data_fragment) const;
-		};
-	}
+            const GLuint compile_fragment(const char* data_fragment) const;
+        };
+    }
 }

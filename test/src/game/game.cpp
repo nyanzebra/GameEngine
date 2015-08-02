@@ -57,7 +57,7 @@ TEST_SUITE(game) {
         (*(sprite*)(*window["Button"])["button_text"]).texture(image);
 
         GLint texture_ids[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        shader.setUniformIntvectorx1("textures", 10, texture_ids);
+        shader.uniform_int_vectorx1("textures", 10, texture_ids);
 
         while (!window.shouldClose()) {
             window.clear();
@@ -111,7 +111,7 @@ TEST_SUITE(game) {
         window["3d cube"]->add_transform("cube", glm::rotate(glm::mat4(), 45.0f, glm::vec3(3, 1, 3)));
 
         GLint texture_ids[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        shader.setUniformIntvectorx1("textures", 10, texture_ids);
+        shader.uniform_int_vectorx1("textures", 10, texture_ids);
 
         while (!window.shouldClose()) {
             window.clear();

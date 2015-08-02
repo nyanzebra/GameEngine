@@ -18,7 +18,7 @@ using namespace cppe::io;
 //world object may be observer pattern with many observed subjects and there may be more than one world object
 namespace physics {
     namespace physical_object {
-        class WorldSpace {
+        class worldspace {
         public:
             float length, width, height;
             glm::vec3 position;
@@ -26,7 +26,7 @@ namespace physics {
 
         class comparator {
         public:
-            bool operator()(const WorldSpace space, const std::unique_ptr<RigidBody> body) {
+            bool operator()(const worldspace space, const std::unique_ptr<rigidbody> body) {
                 float x = body.get()->position.x;
                 float y = body.get()->position.y;
                 float z = body.get()->position.z;
@@ -42,8 +42,8 @@ namespace physics {
             }
         };
 
-        typedef std::vector<std::unique_ptr<RigidBody>> unique_rigid_body_list;
-        typedef std::vector<std::unique_ptr<WorldSpace>> unique_space_list;
+        typedef std::vector<std::unique_ptr<rigidbody>> unique_rigid_body_list;
+        typedef std::vector<std::unique_ptr<worldspace>> unique_space_list;
 
         class WorldObject {
         public:
@@ -52,14 +52,14 @@ namespace physics {
 
             
         
-            RigidBody& find_object(const std::string& name);
+            rigidbody& find_object(const std::string& name);
 
             //handle the updated positions first... then cache locations and handle collisions
             void handle_collisions(const float& time) {
 
             }
 
-            void add_object(std::unique_ptr<RigidBody>& rb) { }
+            void add_object(std::unique_ptr<rigidbody>& rb) { }
 
         private:
             float length, width, height;

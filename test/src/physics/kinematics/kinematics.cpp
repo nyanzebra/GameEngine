@@ -8,7 +8,7 @@ using namespace physics::kinematics;
 TEST_SUITE(kinematics) {
 
     TEST("precision position") {
-        RigidBody rb;
+        rigidbody rb;
         rb.position = glm::vec3(0, 0, 0);
         rb.velocity = glm::vec3(1, 2, 3);
         rb.acceleration = glm::vec3(1, 0, 1);
@@ -23,7 +23,7 @@ TEST_SUITE(kinematics) {
     };
 
     TEST("precision velocity") {
-        RigidBody rb;
+        rigidbody rb;
         rb.position = glm::vec3(0, 0, 0);
         rb.velocity = glm::vec3(1, 2, 3);
         rb.acceleration = glm::vec3(1, 0, 1);
@@ -38,7 +38,7 @@ TEST_SUITE(kinematics) {
     };
 
     TEST("precision acceleration") {
-        RigidBody rb;
+        rigidbody rb;
         rb.position = glm::vec3(0, 0, 0);
         rb.velocity = glm::vec3(1, 2, 3);
         rb.acceleration = glm::vec3(1, 0, 1);
