@@ -10,7 +10,7 @@ using namespace physics::collisions;
 TEST_SUITE(collision) {
 
     TEST("precision collision") {
-        /*std::unique_ptr<RigidBody> rb(new RigidBody());
+        /*std::unique_ptr<rigidbody> rb(new rigidbody());
         rb->position = glm::vec3(0, 0, 0);
         rb->velocity = glm::vec3(1, 1, 0);
         rb->acceleration = glm::vec3(0, 0, 0);
@@ -18,7 +18,7 @@ TEST_SUITE(collision) {
         WorldObject world;
         world.add_object(rb);       
 
-        std::unique_ptr<RigidBody> sb(new RigidBody());
+        std::unique_ptr<rigidbody> sb(new rigidbody());
         sb->position = glm::vec3(2, 2, 0);
         sb->velocity = glm::vec3(-1, -1, 0);
         sb->acceleration = glm::vec3(0, 0, 0);

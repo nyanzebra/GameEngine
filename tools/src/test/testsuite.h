@@ -45,25 +45,29 @@ namespace cppe {
             unsigned passes = 0;
             unsigned fails = 0;
             unsigned indeterminables = 0;
-        };  
+        };
 
-#define DIAGNOSITIC(message) diagnostic.push_back({__FILE__, __LINE__, message})
+#define DIAGNOSTIC(message) diagnostic.push_back({__FILE__, __LINE__, message})
 
 #define TEST_SUITE(test_suite)\
         class test_suite : public testsuite {\
         public:\
             test_suite() : testsuite(#test_suite) {}\
             virtual void init() override;\
-        } test_suite_instance;\
+                                                                        } test_suite_instance;\
         void test_suite::init()
 
 #define TEST(test_name) if(test_map.find(test_name) != test_map.end()) { console::colored_output_line(RED, test_name, " test already exists... undefined behaviour to follow..."); } test_map[test_name] = [=]()
 
-#define ASSERT(condition, message) if (!condition) { current_test_result(FAIL_TEST); DIAGNOSITIC(#condition message); } else {	current_test_result(PASS_TEST); }
+#define ASSERT(condition, message) if (!condition) { current_test_result(FAIL_TEST); DIAGNOSTIC(#condition message); } else { current_test_result(PASS_TEST); DIAGNOSTIC(std::string(message).replace(std::string(message).find("not "), 4, "")); }
 
 #define FAIL() ASSERT(false, " is always false")
 
 #define PASS() ASSERT(true, " should never fail")
+
+#define FAIL_BECAUSE(message) ASSERT(false, message)
+
+#define PASS_BECAUSE(message) ASSERT(true, message)
 
 #define ASSERT_TRUE(condition) ASSERT(condition, " condition is not true")
 
@@ -72,6 +76,62 @@ namespace cppe {
 #define ASSERT_EQUAL(conditional_a, conditional_b) ASSERT((conditional_a == conditional_b), " conditionals are not equal")
 
 #define ASSERT_NOT_EQUAL(conditional_a, conditional_b) ASSERT((conditional_a != conditional_b), " conditionals are equal")
+
+        template<typename T>
+        const int are_arrays_equal(const T* a, const unsigned long int sa, const T* b, const unsigned long int sb) {
+            if (sa == sb) {
+                for (int i = 0; i < sa; ++i) {
+                    if (a[i] != b[i]) {
+                        return 0;
+                    }
+                }
+                return 1;
+            }
+            return -1;
+        }
+
+        template<typename T>
+        const int are_arrays_not_equal(const T* a, const unsigned long int sa, const T* b, const unsigned long int sb) {
+            if (sa == sb) {
+                for (int i = 0; i < sa; ++i) {
+                    if (a[i] == b[i]) {
+                        return 0;
+                    }
+                }
+                return 1;
+            }
+            return -1;
+        }
+
+#define ASSERT_ARRAY_EQUAL(conditional_a, size_a, conditional_b, size_b)\
+    switch(are_arrays_equal((conditional_a),size_a,(conditional_b),size_b)){\
+    case -1:\
+        FAIL_BECAUSE("arrays are of different size");\
+        break;\
+    case 0:\
+        FAIL_BECAUSE("indexed items are different");\
+        break;\
+    case 1:\
+        PASS_BECAUSE("indexed items are the same");\
+        break;\
+    default:\
+        break;\
+            }
+
+#define ASSERT_ARRAY_NOT_EQUAL(conditional_a, size_a, conditional_b, size_b)\
+    switch(are_arrays_equal(conditional_a,size_a,conditional_b,size_b)){\
+    case -1:\
+        PASS_BECAUSE("arrays are of different size");\
+        break;\
+    case 0:\
+        FAIL_BECAUSE("indexed items are same");\
+        break;\
+    case 1:\
+        PASS_BECAUSE("indexed items are the different");\
+        break;\
+    default:\
+        break;\
+                    }   
 
 #define ASSERT_NULL(conditional) ASSERT((conditional == NULL), " conditional is not NULL")
 
@@ -93,7 +153,7 @@ namespace cppe {
             "complexity is nlogn time",\
             "complexity is n^2 time",\
             "complexity is worse than n^2 time"\
-        };\
+                                        };\
         Timer t;\
         function(base_case);\
         auto t0 = t.time();\
@@ -104,8 +164,8 @@ namespace cppe {
         complexity::value c = complexity::find_complexity(t0, base_amount, t1, k_amount, t2, n_amount);\
         if (complex != c) {\
             DIAGNOSITIC(complexity_messages[c].c_str());\
-        }\
-}
+                                        }\
+                                }
 
     }
 }

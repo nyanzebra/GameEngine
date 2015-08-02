@@ -57,6 +57,7 @@ inline bool menu(test_suite_map::iterator& it, const test_suite_map::iterator& e
         console::output_line("ERROR:\tmust provide valid input");
         menu(it, end);
     }
+    return false;
 }
 
 inline void print_header(const std::string& name) {
@@ -105,12 +106,20 @@ void testregistry::run_test_suites() {
 
                 test_it->second();
                 test_result result = test_suite_it->second->current_test_result();
+                std::string message = "";
 
                 int i = 0;
                 switch (result) {
                 case PASS_TEST:
-                    test_suite_it->second->passed_tests()++;
-                    console::colored_output_line(DARKER(GREEN), "Passed...");
+                    test_suite_it->second->passed_tests()++;        
+                    
+                    if (!test_suite_it->second->diagnostic.empty() && test_suite_it->second->diagnostic.front().message != "") {
+                        message = test_suite_it->second->diagnostic.front().message;
+                        test_suite_it->second->diagnostic.clear();
+                    }
+
+                    console::colored_output_line(DARKER(GREEN), "Passed...", message);
+                   
                     break;
                 case FAIL_TEST:
                     test_suite_it->second->failed_tests()++;

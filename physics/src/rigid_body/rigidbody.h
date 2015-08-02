@@ -10,7 +10,7 @@ using namespace physics::collisions;
 
 namespace physics {
     namespace physical_object {
-        enum Interpolate {
+        enum interpolate {
             NONE,
             INTERPOLATE,
             EXTRAPOLATE,
@@ -22,10 +22,10 @@ namespace physics {
             THREE,
         };
 
-        class RigidBody {
+        class rigidbody {
         public:
-            RigidBody() = default;
-            ~RigidBody() = default;
+            rigidbody() = default;
+            ~rigidbody() = default;
 
             void handle_collision() { has_collided = true; }
             bool has_collided = false;
@@ -42,7 +42,7 @@ namespace physics {
             glm::vec3 acceleration;
             glm::vec3 jerk;
 
-            Interpolate interpolate = Interpolate::NONE;
+            interpolate interpolate = interpolate::NONE;
             Dimension dimension;
 
             bool affected_by_gravity = false;

@@ -10,13 +10,13 @@ void scene::bind_shader(const ftl::graphics::shader& shader) {
 }
 
 void scene::attach_shader_variables() {
-    _shader.setUniformMatrix4("projection_matrix", _camera.projection());
-    _shader.setUniformMatrix4("view_matrix", _camera.view());
+    _shader.uniform_Matrix4("projection_matrix", _camera.projection());
+    _shader.uniform_Matrix4("view_matrix", _camera.view());
 }             
 
 void scene::update_shader_variables(const double& x, const double& y) {
     _shader.enable();
-    _shader.setUniformFloatx2("light_position", glm::vec2((float)(x * 32.0f / 800.0f) - 16.0f, (float)(9.0f - y * 18.0f / 600.0f)));
+    _shader.uniform_floatx2("light_position", glm::vec2((float)(x * 32.0f / 800.0f) - 16.0f, (float)(9.0f - y * 18.0f / 600.0f)));
 }
 
 void scene::unbind_shader() {
