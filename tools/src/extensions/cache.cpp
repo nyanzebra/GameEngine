@@ -2,31 +2,30 @@
                           
 namespace cppe {
     namespace memory {
-        /*template <class Capacity = kilobyte<1>, typename Key = int, typename Value = int, template<class, class, class, class> class Container = std::map, typename Comparator = std::less<Value>, typename Allocator = std::allocator<Value>>
+        template <class Capacity = kilobyte<1>, typename Key = int, typename Value = int, template<class, class, class, class> class Container = std::map, typename Comparator = std::less<Value>, typename Allocator = std::allocator<Value>>
         void cache<Capacity, Key, Value, Container, Comparator, Allocator>::add(const Key& key, const Value& value) {
             if (_current_size < Capacity::value / sizeof(char)) {
                 _current_size += sizeof(Value);
-                if (_cache.find(key)!=_cache.end()) {
-                    _cache[key] = std::make_shared<Value>(new Value(value));
+                console::output(_current_size);
+                if (_cache.find(key) == _cache.end()) {
+                    _cache[key] = value;
+                    _cache_ref[key] = value;
                 }
             } else {
                 store();
             }
-        }*/
+        }
 
         template <class Capacity = kilobyte<1>, typename Key = int, typename Value = int, template<class, class, class, class> class Container = std::map, typename Comparator = std::less<Value>, typename Allocator = std::allocator<Value>>
         void cache<Capacity, Key, Value, Container, Comparator, Allocator>::remove(const Key& key) {
             _cache.erase(key);
         }
 
-        /*template <class Capacity = kilobyte<1>, typename Key = int, typename Value = int, template<class, class, class, class> class Container = std::map, typename Comparator = std::less<Value>, typename Allocator = std::allocator<Value>>
+        template <class Capacity = kilobyte<1>, typename Key = int, typename Value = int, template<class, class, class, class> class Container = std::map, typename Comparator = std::less<Value>, typename Allocator = std::allocator<Value>>
         const Value&& cache<Capacity, Key, Value, Container, Comparator, Allocator>::operator[](const Key& key) {
-            if(_cache[key].expired()) {
-                return NULL;
-            }
-
-            return std::move(*(_cache[key].lock().get()));
-        }*/
+            auto sharedptr = _cache[key].lock();
+            return std::move(*sharedptr);
+        }
 
         template <class Capacity = kilobyte<1>, typename Key = int, typename Value = int, template<class, class, class, class> class Container = std::map, typename Comparator = std::less<Value>, typename Allocator = std::allocator<Value>>
         void cache<Capacity, Key, Value, Container, Comparator, Allocator>::clear() {
@@ -49,16 +48,22 @@ namespace cppe {
             clear();
         }
 
-        /*template <class Capacity = kilobyte<1>, typename Key = int, typename Value = int, template<class, class, class, class> class Container = std::map, typename Comparator = std::less<Value>, typename Allocator = std::allocator<Value>>
+        template <class Capacity = kilobyte<1>, typename Key = int, typename Value = int, template<class, class, class, class> class Container = std::map, typename Comparator = std::less<Value>, typename Allocator = std::allocator<Value>>
         void cache<Capacity, Key, Value, Container, Comparator, Allocator>::fill() {
-            cppe::io::file<Cache::iterator> disk(_name);
-            disk.read(FILE_ALL, true);
-            for (int i = 0; i < Capacity::value; ++i) {
-                if(disk.data_ptr()) {                                                      
-                    _cache.insert(std::pair<Key,Value>(disk.data_ptr()[i].first,disk.data_ptr()[i].second))  ;
+            cppe::io::file<CachePairInstance> disk(_name);
+            disk.read(FILE_ALL, true);                   
+            for (int i = 0; i < Capacity::value / sizeof(Value) && i < sizeof(disk.data_ptr()) / sizeof(CachePairInstance); ++i) {
+                try {
+                    if (disk.data_ptr()) {
+                        auto it = disk.data_ptr()[i];
+
+                        _cache.insert(std::pair<Key, std::weak_ptr<Value>>(it.first, std::make_shared<Value>(it.second)));
+                    }
+                } catch (std::exception e) {
+                    console::output_line(e.what());
                 }
-            }
-        }*/
+                }
+        }
     }
 }
 
