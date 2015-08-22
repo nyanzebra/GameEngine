@@ -54,7 +54,7 @@ namespace cppe {
         public:\
             test_suite() : testsuite(#test_suite) {}\
             virtual void init() override;\
-                                                                        } test_suite_instance;\
+                                                                                } test_suite_instance;\
         void test_suite::init()
 
 #define TEST(test_name) if(test_map.find(test_name) != test_map.end()) { console::colored_output_line(RED, test_name, " test already exists... undefined behaviour to follow..."); } test_map[test_name] = [=]()
@@ -104,19 +104,19 @@ namespace cppe {
         }
 
 #define ASSERT_ARRAY_EQUAL(conditional_a, size_a, conditional_b, size_b)\
-    switch(are_arrays_equal((conditional_a),size_a,(conditional_b),size_b)){\
-    case -1:\
-        FAIL_BECAUSE("arrays are of different size");\
-        break;\
-    case 0:\
-        FAIL_BECAUSE("indexed items are different");\
-        break;\
-    case 1:\
-        PASS_BECAUSE("indexed items are the same");\
-        break;\
-    default:\
-        break;\
-            }
+ switch(are_arrays_equal((conditional_a),size_a,(conditional_b),size_b)) {\
+ case -1:\
+ FAIL_BECAUSE("arrays are of different size");\
+ break;\
+ case 0:\
+ FAIL_BECAUSE("indexed items are different");\
+ break;\
+ case 1:\
+ PASS_BECAUSE("indexed items are the same");\
+ break;\
+ default:\
+ break;\
+         }
 
 #define ASSERT_ARRAY_NOT_EQUAL(conditional_a, size_a, conditional_b, size_b)\
     switch(are_arrays_equal(conditional_a,size_a,conditional_b,size_b)){\
@@ -131,7 +131,7 @@ namespace cppe {
         break;\
     default:\
         break;\
-                    }   
+    }
 
 #define ASSERT_NULL(conditional) ASSERT((conditional == NULL), " conditional is not NULL")
 

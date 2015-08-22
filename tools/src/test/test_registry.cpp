@@ -29,18 +29,18 @@ inline bool menu(test_suite_map::iterator& it, const test_suite_map::iterator& e
     std::string user_input = "";
     console::input(user_input);
 
-    if (user_input == "c" || user_input == "continue") {
+    if (user_input.compare("c") == 0 || user_input.compare("continue") == 0) {
         return true;
-    } else if (user_input == "r" || user_input == "repeat") {
+    } else if (user_input.compare("r") == 0 || user_input.compare("repeat") == 0) {
         --it;
         return true;
-    } else if (user_input == "s" || user_input == "skip") {
+    } else if (user_input.compare("s") == 0 || user_input.compare("skip") == 0) {
         ++it;
         return true;
-    } else if (user_input == "q" || user_input == "quit") {
+    } else if (user_input.compare("q") == 0 || user_input.compare("quit") == 0) {
         it = end;
         return false;
-    } else if (user_input == "l" || user_input == "list") {
+    } else if (user_input.compare("l") == 0 || user_input.compare("list") == 0) {
         console::colored_output_line(BLUE, "results: ");
         for (auto begin = it; begin != end; ++begin) {
             console::colored_output_line(BLUE, begin->first);
@@ -57,7 +57,6 @@ inline bool menu(test_suite_map::iterator& it, const test_suite_map::iterator& e
         console::output_line("ERROR:\tmust provide valid input");
         menu(it, end);
     }
-    return false;
 }
 
 inline void print_header(const std::string& name) {
