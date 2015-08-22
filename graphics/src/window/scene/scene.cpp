@@ -10,8 +10,8 @@ void scene::bind_shader(const ftl::graphics::shader& shader) {
 }
 
 void scene::attach_shader_variables() {
-    _shader.uniform_Matrix4("projection_matrix", _camera.projection());
-    _shader.uniform_Matrix4("view_matrix", _camera.view());
+    _shader.uniform_matrix4("projection_matrix", _camera.projection());
+    _shader.uniform_matrix4("view_matrix", _camera.view());
 }             
 
 void scene::update_shader_variables(const double& x, const double& y) {
