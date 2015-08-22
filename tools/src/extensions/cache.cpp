@@ -4,7 +4,7 @@ namespace cppe {
     namespace memory {
         template <class Capacity = kilobyte<1>, typename Key = int, typename Value = int, template<class, class, class, class> class Container = std::map, typename Comparator = std::less<Value>, typename Allocator = std::allocator<Value>>
         void cache<Capacity, Key, Value, Container, Comparator, Allocator>::add(const Key& key, const Value& value) {
-            if (_current_size < Capacity::value / sizeof(char)) {
+            if (_current_size < Capacity / sizeof(char)) {
                 _current_size += sizeof(Value);
                 console::output(_current_size);
                 if (_cache.find(key) == _cache.end()) {
@@ -43,7 +43,7 @@ namespace cppe {
                     values[i++] = std::pair<Key,Value>(it->first, *it->second.lock().get());  
                 }
             }
-            disk.fill(values, Capacity::value * sizeof(char));
+            disk.fill(values, Capacity * sizeof(char));
             disk.write(true);
             clear();
         }
@@ -52,7 +52,7 @@ namespace cppe {
         void cache<Capacity, Key, Value, Container, Comparator, Allocator>::fill() {
             cppe::io::file<CachePairInstance> disk(_name);
             disk.read(FILE_ALL, true);                   
-            for (int i = 0; i < Capacity::value / sizeof(Value) && i < sizeof(disk.data_ptr()) / sizeof(CachePairInstance); ++i) {
+            for (int i = 0; i < Capacity / sizeof(Value) && i < sizeof(disk.data_ptr()) / sizeof(CachePairInstance); ++i) {
                 try {
                     if (disk.data_ptr()) {
                         auto it = disk.data_ptr()[i];
