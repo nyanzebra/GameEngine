@@ -23,16 +23,16 @@ namespace cppe {
             ~testsuite() = default;
             virtual void init() {}
 
-            inline unsigned& passed_tests() { return passes; }
-            inline unsigned& failed_tests() { return fails; }
-            inline unsigned& indeterminates() { return indeterminables; }
-            inline std::string& name() { return suite_name; }
-            inline test_function_map& tests() { return test_map; }
-            inline void current_test_result(const test_result& value) { result = value; }
-            inline const test_result& current_test_result() const { return result; }
+            unsigned& passed_tests() { return passes; }
+            unsigned& failed_tests() { return fails; }
+            unsigned& indeterminates() { return indeterminables; }
+            std::string& name() { return suite_name; }
+            test_function_map& tests() { return test_map; }
+            void current_test_result(const test_result& value) { result = value; }
+            const test_result& current_test_result() const { return result; }
 
             test_function_map test_map;
-            std::list<const diagnostic_message> diagnostic;
+            std::list<diagnostic_message> diagnostic;
 
         private:
             testsuite(const std::string& name, testregistry& registry) : suite_name(name), registry(registry) {
@@ -54,7 +54,7 @@ namespace cppe {
         public:\
             test_suite() : testsuite(#test_suite) {}\
             virtual void init() override;\
-                                                                                } test_suite_instance;\
+        } test_suite_instance;\
         void test_suite::init()
 
 #define TEST(test_name) if(test_map.find(test_name) != test_map.end()) { console::colored_output_line(RED, test_name, " test already exists... undefined behaviour to follow..."); } test_map[test_name] = [=]()
@@ -91,7 +91,7 @@ namespace cppe {
         }
 
         template<typename T>
-        const int are_arrays_not_equal(const T* a, const unsigned long int sa, const T* b, const unsigned long int sb) {
+        const int are_arrays_not_equal(const T* a, const unsigned long int& sa, const T* b, const unsigned long int& sb) {
             if (sa == sb) {
                 for (int i = 0; i < sa; ++i) {
                     if (a[i] == b[i]) {
@@ -103,35 +103,43 @@ namespace cppe {
             return -1;
         }
 
-#define ASSERT_ARRAY_EQUAL(conditional_a, size_a, conditional_b, size_b)\
- switch(are_arrays_equal((conditional_a),size_a,(conditional_b),size_b)) {\
- case -1:\
- FAIL_BECAUSE("arrays are of different size");\
- break;\
- case 0:\
- FAIL_BECAUSE("indexed items are different");\
- break;\
- case 1:\
- PASS_BECAUSE("indexed items are the same");\
- break;\
- default:\
- break;\
-         }
+        template<typename T>
+        void assert_array_equal(const T* a, const unsigned long int& sa, const T* b, const unsigned long int& sb) {
+            switch (are_arrays_equal((conditional_a), size_a, (conditional_b), size_b)) {
+            case -1:
+                FAIL_BECAUSE("arrays are of different size"); \
+                    break;
+            case 0:
+                FAIL_BECAUSE("indexed items are different"); \
+                    break;
+            case 1:
+                PASS_BECAUSE("indexed items are the same"); \
+                    break;
+            default:
+                break;
+            }
+        }
 
-#define ASSERT_ARRAY_NOT_EQUAL(conditional_a, size_a, conditional_b, size_b)\
-    switch(are_arrays_equal(conditional_a,size_a,conditional_b,size_b)){\
-    case -1:\
-        PASS_BECAUSE("arrays are of different size");\
-        break;\
-    case 0:\
-        FAIL_BECAUSE("indexed items are same");\
-        break;\
-    case 1:\
-        PASS_BECAUSE("indexed items are the different");\
-        break;\
-    default:\
-        break;\
-    }
+        template<typename T>
+        void assert_array_not_equal(const T* a, const unsigned long int& sa, const T* b, const unsigned long int& sb) {
+            switch (are_arrays_equal(conditional_a, size_a, conditional_b, size_b)) {
+            case -1:
+                PASS_BECAUSE("arrays are of different size"); \
+                    break;
+            case 0:
+                FAIL_BECAUSE("indexed items are same"); \
+                    break;
+            case 1:
+                PASS_BECAUSE("indexed items are the different"); \
+                    break;
+            default:\
+                break;
+            }
+        }
+
+#define ASSERT_ARRAY_EQUAL(conditional_a, size_a, conditional_b, size_b) assert_array_equal((conditional_a),size_a,(conditional_b),size_b))
+
+#define ASSERT_ARRAY_NOT_EQUAL(conditional_a, size_a, conditional_b, size_b) assert_array_not_equal((conditional_a),size_a,(conditional_b),size_b))
 
 #define ASSERT_NULL(conditional) ASSERT((conditional == NULL), " conditional is not NULL")
 
@@ -145,28 +153,7 @@ namespace cppe {
 
 #define ASSERT_DIFFERENT(conditional_a, conditional_b) ASSERT((*conditional_a != &conditional_b), " conditionals are the same")
 
-#define ASSERT_COMPLEXITY(complex, function, base_case, base_amount, k_case, k_amount, n_case, n_amount) {\
-        std::string complexity_messages[6] = {\
-            "complexity is constant time",\
-            "complexity is logn time",\
-            "complexity is n time",\
-            "complexity is nlogn time",\
-            "complexity is n^2 time",\
-            "complexity is worse than n^2 time"\
-                                        };\
-        Timer t;\
-        function(base_case);\
-        auto t0 = t.time();\
-        function(k_case);\
-        auto t1 = t.time();\
-        function(n_case);\
-        auto t2 = t.time();\
-        complexity::value c = complexity::find_complexity(t0, base_amount, t1, k_amount, t2, n_amount);\
-        if (complex != c) {\
-            DIAGNOSITIC(complexity_messages[c].c_str());\
-                                        }\
-                                }
-
     }
 }
+
 #endif
