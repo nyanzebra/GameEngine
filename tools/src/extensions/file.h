@@ -130,13 +130,9 @@ namespace cppe {
                 fclose(file);
             }
 
-            T* data_ptr() const {
-                return (T*)_file_buffer;
-            }
+            T* data_ptr() const { return (T*)_file_buffer; }
 
-            T& data() const {
-                return *((T*)_file_buffer);
-            }
+            T& data() const { return *((T*)_file_buffer); }
 
             void fill(const void* data, const unsigned long int size) {
                 _size = size;
@@ -146,9 +142,7 @@ namespace cppe {
                 memcpy(_file_buffer, data, _size * sizeof(T));
             }
 
-            void empty() {
-                memset(_file_buffer, 0, _size);
-            }
+            void empty() { memset(_file_buffer, 0, _size); }
 
         private:
             std::string _file_name;
